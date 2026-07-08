@@ -36,7 +36,6 @@ The dataset contains information about Titanic passengers, including:
 
 ## Project Structure
 
-text
 NTI-ML/
 │
 ├── titanic-data/
