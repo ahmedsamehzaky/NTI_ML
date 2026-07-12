@@ -39,15 +39,22 @@ The dataset contains information about Titanic passengers, including:
 ```text
 NTI-ML/
 │
-├── titanic-data/
+├── Fitness/
+│   ├── Fitness.ipynb
+│   └── Fitness.py
+│
+├── Mini Numpy-project/
+│   └── Mini_Project_1.ipynb
+│
+├── Titanic-data/
 │   └── titanic.csv
 │
-├── notebooks/
+├── Titanic-project/
 │   └── Titanic-project.ipynb
 │
+├── .gitignore
 ├── README.md
-├── requirements.txt
-└── .gitignore
+└── requirements.txt
 ```
 
 ---
@@ -94,39 +101,41 @@ The notebook includes:
 
 Clone the repository:
 
-bash
+```bash
 git clone https://github.com/ahmedsamehzaky/Titanic.git
-
+```
 
 Navigate to the project directory:
 
-bash
-cd titanic-project
-
+```bash
+cd NTI-ML
+```
 
 Create and activate a virtual environment:
 
-bash
-python -m venv .venv
-
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
 
 Install the required packages:
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 Launch Jupyter Notebook:
 
-bash
+```bash
 jupyter notebook
+```
 
 
 Open:
 
-text
+```text
 notebooks/Titanic-project.ipynb
-
+```
 
 ---
 

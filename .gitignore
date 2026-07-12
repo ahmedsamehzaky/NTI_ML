@@ -1,0 +1,20 @@
+# Virtual Environments (بيئات العمل الوهمية)
+venv/
+.venv/
+env/
+.env
+
+# Python Cache (الملفات المؤقتة اللي بايثون بيعملها)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook (ملفات الحفظ التلقائي)
+.ipynb_checkpoints/
+
+# VS Code Settings (إعدادات محرر الأكواد الشخصية)
+.vscode/
+
+# OS Generated Files (الملفات المخفية الخاصة بنظام التشغيل)
+.DS_Store
+Thumbs.db
