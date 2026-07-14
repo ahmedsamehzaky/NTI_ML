@@ -1,36 +1,10 @@
-# Titanic
+# NTI Applied AI & Machine Learning Portfolio
 
 ## Overview
 
-This project presents an Exploratory Data Analysis (EDA) of the Titanic dataset using Python. The objective is to understand the dataset, assess its quality, explore relationships between variables, and identify the factors that influenced passenger survival.
+This repository contains a collection of Data Science and Machine Learning projects developed during the **Applied Artificial Intelligence and Machine Learning** training program at the Information Technology Institute (NTI). 
 
----
-
-## Objectives
-
-- Understand the dataset structure
-- Perform data quality assessment
-- Analyze missing values
-- Generate descriptive statistics
-- Explore feature distributions
-- Analyze survival patterns
-- Visualize relationships between variables
-- Summarize key insights
-
----
-
-## Dataset
-
-The dataset contains information about Titanic passengers, including:
-
-- Survived
-- Passenger Class (Pclass)
-- Name
-- Sex
-- Age
-- Siblings/Spouses Aboard
-- Parents/Children Aboard
-- Fare
+The projects demonstrate practical applications of data manipulation, exploratory data analysis (EDA), and algorithmic logic using Python and its core data science libraries.
 
 ---
 
@@ -56,53 +30,40 @@ NTI-ML/
 ├── README.md
 └── requirements.txt
 ```
+---
+
+## Projects Included
+
+### 1. Titanic Survival Analysis (`Titanic-project/`)
+A comprehensive Exploratory Data Analysis (EDA) pipeline built on the classic Titanic dataset. 
+* **Key Focus:** Assessing data quality, handling missing values, and generating descriptive statistics.
+* **Insights:** Uncovering survival patterns based on demographic and ticket-class data through advanced data visualization techniques.
+
+### 2. Sports Academy Scouting (`Mini_Project/`)
+A core mathematical and array-manipulation project utilizing NumPy.
+* **Objective:** Developing a programmatic selection logic to filter and rank a 6-player squad based on specific physical metrics.
+* **Skills Applied:** Matrix operations, array broadcasting, conditional filtering, and structural data optimization.
+
+### 3. Fitness Tracking & Analysis (`Fitness/`)
+An analytical approach to monitoring physical performance.
+* **Objective:** Utilizing Python to structure and analyze fitness-related data, such as tracking metrics, optimizing workout splits, and processing nutritional/macronutrient values programmatically.
 
 ---
 
-## Technologies Used
+## Technologies & Tools
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Plotly
-- Jupyter Notebook
+* **Programming Languages:** Python
+* **Data Science Libraries:** Pandas, NumPy, Matplotlib, Seaborn
+* **Development Environments:** Jupyter Notebook, VS Code
+* **Version Control:** Git & GitHub
 
 ---
-
-## Exploratory Data Analysis
-
-The notebook includes:
-
-- Dataset overview
-- Data types inspection
-- Missing values analysis
-- Duplicate detection
-- Descriptive statistics
-- Feature distribution analysis
-- Survival analysis
-- Correlation analysis
-- Data visualization
-
----
-
-## Key Findings
-
-- Female passengers had a higher survival rate than male passengers.
-- First-class passengers were more likely to survive.
-- Age contains missing values that require preprocessing.
-- Fare is positively associated with survival.
-- Passenger class is an important factor influencing survival.
-
----
-
 ## How to Run
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/ahmedsamehzaky/Titanic.git
+git clone https://github.com/ahmedsamehzaky/NTI_ML.git
 ```
 
 Navigate to the project directory:
