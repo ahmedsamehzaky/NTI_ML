@@ -231,17 +231,6 @@ This repository demonstrates practical experience in:
 - Python Programming
 - Statistical Analysis
 - Machine Learning Preparation
-
----
-
-# Future Improvements
-
-- Predictive Machine Learning Models
-- Model Evaluation & Comparison
-- Hyperparameter Tuning
-- Explainable AI (XAI)
-- Model Deployment
-
 ---
 
 # Author
