@@ -1,0 +1,28 @@
+# Environments
+venv/
+.venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Data & Models
+*.csv
+*.xlsx
+*.parquet
+*.dat
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Secrets & Configs
+.env
+
+# OS & Editor
+.DS_Store
+.vscode/
