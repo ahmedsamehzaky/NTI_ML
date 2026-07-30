@@ -11,18 +11,22 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load Saved Artifacts (Model, Scaler, Feature Columns)
+# Load Saved Artifacts (Model, Scaler, Feature Columns) - Robust Path Handling
 @st.cache_resource
 def load_artifacts():
-    # Handle path variations depending on execution directory
-    model_path = '../models/logistic_regression_model.joblib'
-    scaler_path = '../models/standard_scaler.joblib'
-    cols_path = '../models/feature_columns.joblib'
+    # الحصول على مسار الفولدر الحالي الذي يوجد فيه ملف السكريبت (app)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     
+    # محاولة المسار النسبي بالصعود خطوة للخارج (في حالة كان السكريبت داخل app والفولدرات بجانبه)
+    model_path = os.path.join(current_dir, '../models/logistic_regression_model.joblib')
+    scaler_path = os.path.join(current_dir, '../models/standard_scaler.joblib')
+    cols_path = os.path.join(current_dir, '../models/feature_columns.joblib')
+    
+    # فحص البديل في حال كان التشغيل من الجذر الرئيسي
     if not os.path.exists(model_path):
-        model_path = 'models/logistic_regression_model.joblib'
-        scaler_path = 'models/standard_scaler.joblib'
-        cols_path = 'models/feature_columns.joblib'
+        model_path = os.path.join(current_dir, 'models/logistic_regression_model.joblib')
+        scaler_path = os.path.join(current_dir, 'models/standard_scaler.joblib')
+        cols_path = os.path.join(current_dir, 'models/feature_columns.joblib')
         
     model = joblib.load(model_path)
     scaler = joblib.load(scaler_path)
