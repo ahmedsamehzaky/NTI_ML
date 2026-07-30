@@ -17,6 +17,9 @@ This repository contains an end-to-end **Machine Learning** and **Data Analysis*
 The project demonstrates the application of a professional data science workflow, progressing from raw data cleaning and exploratory data analysis (EDA) to advanced feature engineering, hyperparameter tuning, regularization, and finally, deployment as an interactive web application.
 
 ---
+### 📍 Streamlit App:
+🔗 [Click here to open and test the app directly](your_public_streamlit_link_here)
+___
 
 # Repository Structure
 
@@ -97,7 +100,20 @@ The project is structured into 15 sequential analytical and modeling phases:
 ---
 
 # Getting Started
+---
 
+# Web Application (Streamlit Dashboard)
+
+We have built an interactive web application using Streamlit to allow users and stakeholders to test the model in real-time.
+
+### How to Run Locally:
+1. Ensure you have installed the requirements:
+```bash
+pip install -r requirements.txt
+```
+```bash
+streamlit run app/streamlit_app.py
+```
 Clone the repository:
 ```bash
 git clone https://github.com/ahmedsamehzaky/financial-risk-classification.git
