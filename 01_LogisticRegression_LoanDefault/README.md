@@ -18,7 +18,7 @@ The project demonstrates the application of a professional data science workflow
 
 ---
 ### 📍 Streamlit App:
-🔗 [Click here to open and test the app directly](https://ntimlgit-m74chi9rxinm6i2gh5agqt.streamlit.app)
+🔗 [Click here to open and test the app directly](https://66sozbtez7hjxg3zpe73zi.streamlit.app/)
 ___
 
 # Repository Structure
