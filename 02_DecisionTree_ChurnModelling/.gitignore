@@ -16,9 +16,6 @@ __pycache__/
 *.xlsx
 *.parquet
 *.dat
-models/*.pkl
-models/*.joblib
-models/*.h5
 
 # Secrets & Configs
 .env
