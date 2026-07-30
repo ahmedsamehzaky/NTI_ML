@@ -18,13 +18,13 @@ The project demonstrates the application of a professional data science workflow
 
 ---
 ### 📍 Streamlit App:
-🔗 [Click here to open and test the app directly](your_public_streamlit_link_here)
+🔗 [Click here to open and test the app directly](https://ntimlgit-m74chi9rxinm6i2gh5agqt.streamlit.app)
 ___
 
 # Repository Structure
 
 ```text
-financial_risk_project/
+01_LogisticRegression_LoanDefault/
 │
 ├── data/
 │   ├── raw/                      # Original unedited data
@@ -116,12 +116,12 @@ streamlit run app/streamlit_app.py
 ```
 Clone the repository:
 ```bash
-git clone https://github.com/ahmedsamehzaky/financial-risk-classification.git
+git clone https://github.com/ahmedsamehzaky/01_LogisticRegression_LoanDefault.git
 ```
 
 Navigate to the project directory:
 ```bash
-cd financial-risk-classification
+cd 01_LogisticRegression_LoanDefault
 ```
 
 Create a virtual environment:
