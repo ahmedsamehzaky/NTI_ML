@@ -24,8 +24,9 @@ Thumbs.db
 graphify-out/
 
 # Training scripts
-run_all_pipelines.py
-train_all.py
+apps/pipelines/run_all_pipelines.py
+apps/pipelines/train_all.py
+apps/pipelines/generate_extended_metrics.py
 
 # Large Model Files
 *.pkl
