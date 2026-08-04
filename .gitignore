@@ -23,5 +23,9 @@ Thumbs.db
 .agents/
 graphify-out/
 
+# Training scripts
+run_all_pipelines.py
+train_all.py
+
 # Large Model Files
 *.pkl
