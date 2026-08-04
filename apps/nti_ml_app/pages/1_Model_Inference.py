@@ -123,13 +123,45 @@ if model_choice and data_path.exists():
     if config['target'] in df_sample.columns:
         df_sample = df_sample.drop(columns=[config['target']])
         
-    st.markdown("Fill out the generated form below to get a prediction.")
+    # Attempt to sort columns by feature importance using Random Forest Base
+    sorted_cols = df_sample.columns.tolist()
+    try:
+        rf_path = base_models_dir / 'Random_Forest_base.pkl'
+        if rf_path.exists():
+            rf_pipe = joblib.load(rf_path)
+            if hasattr(rf_pipe.named_steps.get('classifier'), 'feature_importances_'):
+                importances = rf_pipe.named_steps['classifier'].feature_importances_
+                
+                # Extract original feature names and match them
+                preprocessor = rf_pipe.named_steps['preprocessor']
+                num_features = preprocessor.transformers_[0][2]
+                cat_features_orig = preprocessor.transformers_[1][2]
+                cat_encoder = preprocessor.named_transformers_['cat'].named_steps['onehot']
+                cat_features = cat_encoder.get_feature_names_out(cat_features_orig)
+                
+                feat_names = np.concatenate([num_features, cat_features])
+                
+                col_importances = {c: 0.0 for c in df_sample.columns}
+                for fn, imp in zip(feat_names, importances):
+                    if fn in col_importances:
+                        col_importances[fn] += imp
+                    else:
+                        for orig_col in cat_features_orig:
+                            if fn.startswith(orig_col + '_'):
+                                col_importances[orig_col] += imp
+                                break
+                                
+                sorted_cols = sorted(df_sample.columns, key=lambda x: col_importances.get(x, 0), reverse=True)
+    except Exception as e:
+        pass # fallback to original order if anything fails
+        
+    st.markdown("Fill out the generated form below to get a prediction. **Features are sorted by importance.**")
     
     with st.form("dynamic_inference_form"):
         input_data = {}
         cols = st.columns(3)
         
-        for i, col in enumerate(df_sample.columns):
+        for i, col in enumerate(sorted_cols):
             c = cols[i % 3]
             with c:
                 if pd.api.types.is_numeric_dtype(df_sample[col]):
@@ -161,6 +193,15 @@ if model_choice and data_path.exists():
             input_df = pd.DataFrame([input_data])
             prediction = pipeline.predict(input_df)[0]
             
+            probability_text = ""
+            if config['task'] == 'Classification' and hasattr(pipeline, "predict_proba"):
+                try:
+                    proba = pipeline.predict_proba(input_df)[0]
+                except Exception:
+                    proba = None
+            else:
+                proba = None
+            
             # Inverse transform label if classification
             if config['task'] == 'Classification':
                 le_path = base_models_dir / 'label_encoder.pkl'
@@ -168,7 +209,14 @@ if model_choice and data_path.exists():
                     le = joblib.load(le_path)
                     prediction = le.inverse_transform([prediction])[0]
                     
-            st.success(f"### Result: {prediction}")
+                    if proba is not None and hasattr(pipeline, "classes_"):
+                        class_probs = []
+                        for cls, p in zip(pipeline.classes_, proba):
+                            cls_name = le.inverse_transform([cls])[0]
+                            class_probs.append(f"**{cls_name}**: {p*100:.1f}%")
+                        probability_text = f"  \n*Probabilities:* " + " | ".join(class_probs)
+                    
+            st.success(f"### Result: {prediction}\n{probability_text}")
             
         except Exception as e:
             st.error(f"Error making prediction: {e}")
