@@ -18,3 +18,10 @@ __pycache__/
 # OS Generated Files (الملفات المخفية الخاصة بنظام التشغيل)
 .DS_Store
 Thumbs.db
+
+# Agent & App directories
+.agents/
+graphify-out/
+
+# Large Model Files
+*.pkl

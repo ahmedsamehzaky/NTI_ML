@@ -1,0 +1,127 @@
+{
+  "01_LogisticRegression_LoanDefault/app/streamlit_app.py": {
+    "mtime": 1785370863.249814,
+    "ast_hash": "c87995722da48ffb6673784efa10191f",
+    "semantic_hash": "c87995722da48ffb6673784efa10191f"
+  },
+  "01_LogisticRegression_LoanDefault/src/__init__.py": {
+    "mtime": 1785361094.4776654,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "01_LogisticRegression_LoanDefault/src/preprocessing.py": {
+    "mtime": 1785361094.480688,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "02_DecisionTree_ChurnModelling/app/streamlit_app.py": {
+    "mtime": 1785374039.3091874,
+    "ast_hash": "81049df939f0a98022223fe4c1528eeb",
+    "semantic_hash": "81049df939f0a98022223fe4c1528eeb"
+  },
+  "02_DecisionTree_ChurnModelling/src/__init__.py": {
+    "mtime": 1785361094.5106337,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "02_DecisionTree_ChurnModelling/src/preprocessing.py": {
+    "mtime": 1785361094.5126293,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "03_XGBoost_LoanApproval/classification_app/streamlit_app.py": {
+    "mtime": 1785375370.8573565,
+    "ast_hash": "aa954df063cd6d6e84f38d53c840c223",
+    "semantic_hash": "aa954df063cd6d6e84f38d53c840c223"
+  },
+  "03_XGBoost_LoanApproval/src/__init__.py": {
+    "mtime": 1785361094.5398185,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "03_XGBoost_LoanApproval/src/preprocessing.py": {
+    "mtime": 1785361094.5418174,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "04_RandomForest_HRAttrition/app/streamlit_app.py": {
+    "mtime": 1785419406.6559293,
+    "ast_hash": "15e51140f1966a497efeb660ac2d3762",
+    "semantic_hash": "15e51140f1966a497efeb660ac2d3762"
+  },
+  "04_RandomForest_HRAttrition/src/__init__.py": {
+    "mtime": 1785418019.4754412,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "04_RandomForest_HRAttrition/src/preprocessing.py": {
+    "mtime": 1785418019.4839895,
+    "ast_hash": "0b506d709022bc7f1d85089c75cb6905",
+    "semantic_hash": "0b506d709022bc7f1d85089c75cb6905"
+  },
+  "05_KNN_NB_Loan_Approval/app/streamlit_app.py": {
+    "mtime": 1785597134.6401231,
+    "ast_hash": "b038a933a56f62fcf2dc00006d13f3dc",
+    "semantic_hash": "b038a933a56f62fcf2dc00006d13f3dc"
+  },
+  "06_SVM_Loan_Approval/classification_app/streamlit_app.py": {
+    "mtime": 1785769511.912237,
+    "ast_hash": "6d861f04c2ec2e3e0db543b4f15e92a0",
+    "semantic_hash": "6d861f04c2ec2e3e0db543b4f15e92a0"
+  },
+  "Fitness/Fitness.py": {
+    "mtime": 1783778079.0761704,
+    "ast_hash": "4608ac68b572739fa27ebf52ec07ea46",
+    "semantic_hash": "4608ac68b572739fa27ebf52ec07ea46"
+  },
+  "NTI_ML_App/app.py": {
+    "mtime": 1785774122.5102155,
+    "ast_hash": "7ef81e0593c24c7cd003b1bf2e9df7dd",
+    "semantic_hash": "7ef81e0593c24c7cd003b1bf2e9df7dd"
+  },
+  "NTI_ML_App/pages/1_Loan_Approval.py": {
+    "mtime": 1785774771.0933745,
+    "ast_hash": "28379b8a4d89e8c9b5e8899c17c69c8d",
+    "semantic_hash": "28379b8a4d89e8c9b5e8899c17c69c8d"
+  },
+  "NTI_ML_App/pages/2_Loan_Default.py": {
+    "mtime": 1785774778.812355,
+    "ast_hash": "f566836dc8463aeb376be7ebf325c463",
+    "semantic_hash": "f566836dc8463aeb376be7ebf325c463"
+  },
+  "NTI_ML_App/pages/3_HR_Attrition.py": {
+    "mtime": 1785774787.8418846,
+    "ast_hash": "e0b8fa608016d51cef93b511036cf589",
+    "semantic_hash": "e0b8fa608016d51cef93b511036cf589"
+  },
+  "NTI_ML_App/pages/4_Churn_Modelling.py": {
+    "mtime": 1785774796.361498,
+    "ast_hash": "34f492716261fa3ee941453c859188fc",
+    "semantic_hash": "34f492716261fa3ee941453c859188fc"
+  },
+  "NTI_ML_App/utils/model_loader.py": {
+    "mtime": 1785774089.7192981,
+    "ast_hash": "c10a21f41dfcd4e72cb3b0672d1dd6e5",
+    "semantic_hash": "c10a21f41dfcd4e72cb3b0672d1dd6e5"
+  },
+  "NTI_ML_App/utils/ui_components.py": {
+    "mtime": 1785774596.2487316,
+    "ast_hash": "ee4568019bb77b34a14df3b7c6acfb3a",
+    "semantic_hash": "ee4568019bb77b34a14df3b7c6acfb3a"
+  },
+  "Regression/LoanAmount_Regression_Project/app/streamlit_app.py": {
+    "mtime": 1785516632.192622,
+    "ast_hash": "107e3dee57d838163acdd731626b75d2",
+    "semantic_hash": "107e3dee57d838163acdd731626b75d2"
+  },
+  "Regression/LoanAmount_Regression_Project/src/__init__.py": {
+    "mtime": 1785514674.4270215,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "Regression/LoanAmount_Regression_Project/src/preprocessing.py": {
+    "mtime": 1785514674.4420345,
+    "ast_hash": "bbddbdafb3344b8a9663df98c6b71315",
+    "semantic_hash": "bbddbdafb3344b8a9663df98c6b71315"
+  }
+}

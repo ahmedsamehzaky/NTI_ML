@@ -1,0 +1,1048 @@
+{
+  "communities": {
+    "0": [
+      "nti_ml_app_app",
+      "nti_ml_app_pages_1_loan_approval",
+      "nti_ml_app_pages_2_loan_default",
+      "nti_ml_app_pages_3_hr_attrition",
+      "nti_ml_app_pages_4_churn_modelling",
+      "nti_ml_app_utils_model_loader",
+      "nti_ml_app_utils_model_loader_get_model_path",
+      "nti_ml_app_utils_model_loader_plot_feature_importance",
+      "nti_ml_app_utils_model_loader_rationale_33",
+      "nti_ml_app_utils_ui_components",
+      "nti_ml_app_utils_ui_components_apply_custom_css",
+      "nti_ml_app_utils_ui_components_rationale_122",
+      "nti_ml_app_utils_ui_components_rationale_140",
+      "nti_ml_app_utils_ui_components_rationale_147",
+      "nti_ml_app_utils_ui_components_rationale_4",
+      "nti_ml_app_utils_ui_components_render_about_section",
+      "nti_ml_app_utils_ui_components_render_header",
+      "nti_ml_app_utils_ui_components_render_sidebar"
+    ],
+    "1": [
+      "04_randomforest_hrattrition_app_streamlit_app",
+      "04_randomforest_hrattrition_app_streamlit_app_employee_dataframe",
+      "04_randomforest_hrattrition_app_streamlit_app_header",
+      "04_randomforest_hrattrition_app_streamlit_app_load_csv",
+      "04_randomforest_hrattrition_app_streamlit_app_load_metadata",
+      "04_randomforest_hrattrition_app_streamlit_app_load_pipeline",
+      "04_randomforest_hrattrition_app_streamlit_app_model_name",
+      "04_randomforest_hrattrition_app_streamlit_app_model_parameters",
+      "04_randomforest_hrattrition_app_streamlit_app_probability_chart",
+      "04_randomforest_hrattrition_app_streamlit_app_py_cache_resource",
+      "04_randomforest_hrattrition_app_streamlit_app_py_dataframe",
+      "cache_data"
+    ],
+    "2": [
+      "regression_loanamount_regression_project_src_preprocessing",
+      "regression_loanamount_regression_project_src_preprocessing_align_features",
+      "regression_loanamount_regression_project_src_preprocessing_build_feature_matrix",
+      "regression_loanamount_regression_project_src_preprocessing_cap_outliers_iqr",
+      "regression_loanamount_regression_project_src_preprocessing_clean_raw_dataframe",
+      "regression_loanamount_regression_project_src_preprocessing_py_dataframe",
+      "regression_loanamount_regression_project_src_preprocessing_rationale_1",
+      "regression_loanamount_regression_project_src_preprocessing_rationale_14",
+      "regression_loanamount_regression_project_src_preprocessing_rationale_37",
+      "regression_loanamount_regression_project_src_preprocessing_rationale_55",
+      "regression_loanamount_regression_project_src_preprocessing_rationale_72"
+    ],
+    "3": [
+      "02_decisiontree_churnmodelling_app_streamlit_app",
+      "02_decisiontree_churnmodelling_app_streamlit_app_load_artifacts",
+      "02_decisiontree_churnmodelling_app_streamlit_app_py_cache_resource",
+      "03_xgboost_loanapproval_classification_app_streamlit_app",
+      "03_xgboost_loanapproval_classification_app_streamlit_app_load_pipeline",
+      "03_xgboost_loanapproval_classification_app_streamlit_app_py_cache_resource",
+      "06_svm_loan_approval_classification_app_streamlit_app",
+      "06_svm_loan_approval_classification_app_streamlit_app_load_pipeline",
+      "06_svm_loan_approval_classification_app_streamlit_app_py_cache_resource",
+      "path"
+    ],
+    "4": [
+      "04_randomforest_hrattrition_src_preprocessing",
+      "04_randomforest_hrattrition_src_preprocessing_build_preprocessor",
+      "04_randomforest_hrattrition_src_preprocessing_clean_hr_data",
+      "04_randomforest_hrattrition_src_preprocessing_py_dataframe",
+      "columntransformer"
+    ],
+    "5": [
+      "nti_ml_app_utils_model_loader_get_project_root",
+      "nti_ml_app_utils_model_loader_load_artifact",
+      "nti_ml_app_utils_model_loader_py_cache_resource",
+      "nti_ml_app_utils_model_loader_rationale_14",
+      "nti_ml_app_utils_model_loader_rationale_8"
+    ],
+    "6": [
+      "01_logisticregression_loandefault_app_streamlit_app",
+      "01_logisticregression_loandefault_app_streamlit_app_load_artifacts",
+      "01_logisticregression_loandefault_app_streamlit_app_py_cache_resource"
+    ],
+    "7": [
+      "05_knn_nb_loan_approval_app_streamlit_app",
+      "05_knn_nb_loan_approval_app_streamlit_app_load_artifacts",
+      "05_knn_nb_loan_approval_app_streamlit_app_py_cache_resource"
+    ],
+    "8": [
+      "regression_loanamount_regression_project_app_streamlit_app",
+      "regression_loanamount_regression_project_app_streamlit_app_load_artifacts",
+      "regression_loanamount_regression_project_app_streamlit_app_py_cache_resource"
+    ],
+    "9": [
+      "01_logisticregression_loandefault_src_init"
+    ],
+    "10": [
+      "01_logisticregression_loandefault_src_preprocessing"
+    ],
+    "11": [
+      "02_decisiontree_churnmodelling_src_init"
+    ],
+    "12": [
+      "02_decisiontree_churnmodelling_src_preprocessing"
+    ],
+    "13": [
+      "03_xgboost_loanapproval_src_init"
+    ],
+    "14": [
+      "03_xgboost_loanapproval_src_preprocessing"
+    ],
+    "15": [
+      "04_randomforest_hrattrition_src_init"
+    ],
+    "16": [
+      "abstractvalidator"
+    ],
+    "17": [
+      "cancellationtoken"
+    ],
+    "18": [
+      "dbcontext"
+    ],
+    "19": [
+      "dictionary"
+    ],
+    "20": [
+      "exiteventargs"
+    ],
+    "21": [
+      "fitness_fitness"
+    ],
+    "22": [
+      "icontainer"
+    ],
+    "23": [
+      "idbcontexttransaction"
+    ],
+    "24": [
+      "idisposable"
+    ],
+    "25": [
+      "ientitytypeconfiguration"
+    ],
+    "26": [
+      "ivalueconverter"
+    ],
+    "27": [
+      "modelbuilder"
+    ],
+    "28": [
+      "new_folder_src_psms_application_common_result_cs_list"
+    ],
+    "29": [
+      "new_folder_src_psms_application_dependencyinjection_cs_iservicecollection"
+    ],
+    "30": [
+      "new_folder_src_psms_application_dtos_customerdto_cs_datetime"
+    ],
+    "31": [
+      "new_folder_src_psms_application_dtos_dashboarddto_cs_list"
+    ],
+    "32": [
+      "new_folder_src_psms_application_dtos_installmentdto_cs_datetime"
+    ],
+    "33": [
+      "new_folder_src_psms_application_dtos_installmentdto_cs_list"
+    ],
+    "34": [
+      "new_folder_src_psms_application_dtos_paymentdto_cs_datetime"
+    ],
+    "35": [
+      "new_folder_src_psms_application_dtos_paymentdto_cs_list"
+    ],
+    "36": [
+      "new_folder_src_psms_application_dtos_productdto_cs_datetime"
+    ],
+    "37": [
+      "new_folder_src_psms_application_dtos_reportdto_cs_datetime"
+    ],
+    "38": [
+      "new_folder_src_psms_application_dtos_reportdto_cs_list"
+    ],
+    "39": [
+      "new_folder_src_psms_application_dtos_saledto_cs_datetime"
+    ],
+    "40": [
+      "new_folder_src_psms_application_dtos_saledto_cs_list"
+    ],
+    "41": [
+      "new_folder_src_psms_application_dtos_saledto_cs_paymentmethod"
+    ],
+    "42": [
+      "new_folder_src_psms_application_interfaces_iauthservice_cs_task"
+    ],
+    "43": [
+      "new_folder_src_psms_application_interfaces_ibackupservice_cs_datetime"
+    ],
+    "44": [
+      "new_folder_src_psms_application_interfaces_ibackupservice_cs_ireadonlylist"
+    ],
+    "45": [
+      "new_folder_src_psms_application_interfaces_ibackupservice_cs_task"
+    ],
+    "46": [
+      "new_folder_src_psms_application_interfaces_icustomerservice_cs_ireadonlylist"
+    ],
+    "47": [
+      "new_folder_src_psms_application_interfaces_icustomerservice_cs_task"
+    ],
+    "48": [
+      "new_folder_src_psms_application_interfaces_idashboardservice_cs_task"
+    ],
+    "49": [
+      "new_folder_src_psms_application_interfaces_iinstallmentservice_cs_datetime"
+    ],
+    "50": [
+      "new_folder_src_psms_application_interfaces_iinstallmentservice_cs_ireadonlylist"
+    ],
+    "51": [
+      "new_folder_src_psms_application_interfaces_iinstallmentservice_cs_task"
+    ],
+    "52": [
+      "new_folder_src_psms_application_interfaces_ipaymentservice_cs_ireadonlylist"
+    ],
+    "53": [
+      "new_folder_src_psms_application_interfaces_ipaymentservice_cs_task"
+    ],
+    "54": [
+      "new_folder_src_psms_application_interfaces_iproductservice_cs_ireadonlylist"
+    ],
+    "55": [
+      "new_folder_src_psms_application_interfaces_iproductservice_cs_task"
+    ],
+    "56": [
+      "new_folder_src_psms_application_interfaces_ireportservice_cs_datetime"
+    ],
+    "57": [
+      "new_folder_src_psms_application_interfaces_ireportservice_cs_task"
+    ],
+    "58": [
+      "new_folder_src_psms_application_interfaces_isaleservice_cs_datetime"
+    ],
+    "59": [
+      "new_folder_src_psms_application_interfaces_isaleservice_cs_ireadonlylist"
+    ],
+    "60": [
+      "new_folder_src_psms_application_interfaces_isaleservice_cs_task"
+    ],
+    "61": [
+      "new_folder_src_psms_application_services_authservice_cs_int"
+    ],
+    "62": [
+      "new_folder_src_psms_application_services_authservice_cs_string"
+    ],
+    "63": [
+      "new_folder_src_psms_application_services_authservice_cs_task"
+    ],
+    "64": [
+      "new_folder_src_psms_application_services_customerservice_cs_imapper"
+    ],
+    "65": [
+      "new_folder_src_psms_application_services_customerservice_cs_ireadonlylist"
+    ],
+    "66": [
+      "new_folder_src_psms_application_services_customerservice_cs_task"
+    ],
+    "67": [
+      "new_folder_src_psms_application_services_dashboardservice_cs_imapper"
+    ],
+    "68": [
+      "new_folder_src_psms_application_services_dashboardservice_cs_task"
+    ],
+    "69": [
+      "new_folder_src_psms_application_services_installmentservice_cs_datetime"
+    ],
+    "70": [
+      "new_folder_src_psms_application_services_installmentservice_cs_imapper"
+    ],
+    "71": [
+      "new_folder_src_psms_application_services_installmentservice_cs_ireadonlylist"
+    ],
+    "72": [
+      "new_folder_src_psms_application_services_installmentservice_cs_list"
+    ],
+    "73": [
+      "new_folder_src_psms_application_services_installmentservice_cs_task"
+    ],
+    "74": [
+      "new_folder_src_psms_application_services_paymentservice_cs_imapper"
+    ],
+    "75": [
+      "new_folder_src_psms_application_services_paymentservice_cs_ireadonlylist"
+    ],
+    "76": [
+      "new_folder_src_psms_application_services_paymentservice_cs_task"
+    ],
+    "77": [
+      "new_folder_src_psms_application_services_productservice_cs_imapper"
+    ],
+    "78": [
+      "new_folder_src_psms_application_services_productservice_cs_ireadonlylist"
+    ],
+    "79": [
+      "new_folder_src_psms_application_services_productservice_cs_task"
+    ],
+    "80": [
+      "new_folder_src_psms_application_services_reportservice_cs_datetime"
+    ],
+    "81": [
+      "new_folder_src_psms_application_services_reportservice_cs_imapper"
+    ],
+    "82": [
+      "new_folder_src_psms_application_services_reportservice_cs_task"
+    ],
+    "83": [
+      "new_folder_src_psms_application_services_saleservice_cs_datetime"
+    ],
+    "84": [
+      "new_folder_src_psms_application_services_saleservice_cs_imapper"
+    ],
+    "85": [
+      "new_folder_src_psms_application_services_saleservice_cs_ireadonlylist"
+    ],
+    "86": [
+      "new_folder_src_psms_application_services_saleservice_cs_task"
+    ],
+    "87": [
+      "new_folder_src_psms_domain_common_auditableentity_cs_datetime"
+    ],
+    "88": [
+      "new_folder_src_psms_domain_common_baseentity_cs_datetime"
+    ],
+    "89": [
+      "new_folder_src_psms_domain_common_isoftdeletable_cs_datetime"
+    ],
+    "90": [
+      "new_folder_src_psms_domain_entities_auditlog_cs_datetime"
+    ],
+    "91": [
+      "new_folder_src_psms_domain_entities_customer_cs_icollection"
+    ],
+    "92": [
+      "new_folder_src_psms_domain_entities_installment_cs_datetime"
+    ],
+    "93": [
+      "new_folder_src_psms_domain_entities_installment_cs_icollection"
+    ],
+    "94": [
+      "new_folder_src_psms_domain_entities_installmentplan_cs_datetime"
+    ],
+    "95": [
+      "new_folder_src_psms_domain_entities_installmentplan_cs_icollection"
+    ],
+    "96": [
+      "new_folder_src_psms_domain_entities_payment_cs_datetime"
+    ],
+    "97": [
+      "new_folder_src_psms_domain_entities_product_cs_datetime"
+    ],
+    "98": [
+      "new_folder_src_psms_domain_entities_product_cs_icollection"
+    ],
+    "99": [
+      "new_folder_src_psms_domain_entities_sale_cs_datetime"
+    ],
+    "100": [
+      "new_folder_src_psms_domain_entities_sale_cs_icollection"
+    ],
+    "101": [
+      "new_folder_src_psms_domain_entities_sale_cs_paymentmethod"
+    ],
+    "102": [
+      "new_folder_src_psms_domain_entities_user_cs_datetime"
+    ],
+    "103": [
+      "new_folder_src_psms_domain_interfaces_icodegenerator_cs_task"
+    ],
+    "104": [
+      "new_folder_src_psms_domain_interfaces_irepository_cs_expression"
+    ],
+    "105": [
+      "new_folder_src_psms_domain_interfaces_irepository_cs_func"
+    ],
+    "106": [
+      "new_folder_src_psms_domain_interfaces_irepository_cs_ienumerable"
+    ],
+    "107": [
+      "new_folder_src_psms_domain_interfaces_irepository_cs_ireadonlylist"
+    ],
+    "108": [
+      "new_folder_src_psms_domain_interfaces_irepository_cs_task"
+    ],
+    "109": [
+      "new_folder_src_psms_domain_interfaces_iunitofwork_cs_task"
+    ],
+    "110": [
+      "new_folder_src_psms_infrastructure_data_configurations_auditlogconfiguration_cs_entitytypebuilder"
+    ],
+    "111": [
+      "new_folder_src_psms_infrastructure_data_configurations_customerconfiguration_cs_entitytypebuilder"
+    ],
+    "112": [
+      "new_folder_src_psms_infrastructure_data_configurations_installmentconfiguration_cs_entitytypebuilder"
+    ],
+    "113": [
+      "new_folder_src_psms_infrastructure_data_configurations_installmentplanconfiguration_cs_entitytypebuilder"
+    ],
+    "114": [
+      "new_folder_src_psms_infrastructure_data_configurations_paymentconfiguration_cs_entitytypebuilder"
+    ],
+    "115": [
+      "new_folder_src_psms_infrastructure_data_configurations_productconfiguration_cs_entitytypebuilder"
+    ],
+    "116": [
+      "new_folder_src_psms_infrastructure_data_configurations_saleconfiguration_cs_entitytypebuilder"
+    ],
+    "117": [
+      "new_folder_src_psms_infrastructure_data_configurations_saleitemconfiguration_cs_entitytypebuilder"
+    ],
+    "118": [
+      "new_folder_src_psms_infrastructure_data_configurations_userconfiguration_cs_entitytypebuilder"
+    ],
+    "119": [
+      "new_folder_src_psms_infrastructure_data_databaseseeder_cs_task"
+    ],
+    "120": [
+      "new_folder_src_psms_infrastructure_data_psmsdbcontext_cs_dbset"
+    ],
+    "121": [
+      "new_folder_src_psms_infrastructure_data_psmsdbcontext_cs_task"
+    ],
+    "122": [
+      "new_folder_src_psms_infrastructure_dependencyinjection_cs_iservicecollection"
+    ],
+    "123": [
+      "new_folder_src_psms_infrastructure_repositories_customerrepository_cs_ireadonlylist"
+    ],
+    "124": [
+      "new_folder_src_psms_infrastructure_repositories_customerrepository_cs_task"
+    ],
+    "125": [
+      "new_folder_src_psms_infrastructure_repositories_installmentrepository_cs_ireadonlylist"
+    ],
+    "126": [
+      "new_folder_src_psms_infrastructure_repositories_installmentrepository_cs_task"
+    ],
+    "127": [
+      "new_folder_src_psms_infrastructure_repositories_productrepository_cs_ireadonlylist"
+    ],
+    "128": [
+      "new_folder_src_psms_infrastructure_repositories_productrepository_cs_task"
+    ],
+    "129": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_dbset"
+    ],
+    "130": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_expression"
+    ],
+    "131": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_func"
+    ],
+    "132": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_ienumerable"
+    ],
+    "133": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_ireadonlylist"
+    ],
+    "134": [
+      "new_folder_src_psms_infrastructure_repositories_repository_cs_task"
+    ],
+    "135": [
+      "new_folder_src_psms_infrastructure_repositories_salerepository_cs_datetime"
+    ],
+    "136": [
+      "new_folder_src_psms_infrastructure_repositories_salerepository_cs_ireadonlylist"
+    ],
+    "137": [
+      "new_folder_src_psms_infrastructure_repositories_salerepository_cs_task"
+    ],
+    "138": [
+      "new_folder_src_psms_infrastructure_services_backupservice_cs_ireadonlylist"
+    ],
+    "139": [
+      "new_folder_src_psms_infrastructure_services_backupservice_cs_string"
+    ],
+    "140": [
+      "new_folder_src_psms_infrastructure_services_backupservice_cs_task"
+    ],
+    "141": [
+      "new_folder_src_psms_infrastructure_services_codegenerator_cs_task"
+    ],
+    "142": [
+      "new_folder_src_psms_infrastructure_unitofwork_unitofwork_cs_task"
+    ],
+    "143": [
+      "new_folder_src_psms_wpf_app_xaml_cs_iservicecollection"
+    ],
+    "144": [
+      "new_folder_src_psms_wpf_converters_booltovisibilityconverter_cs_cultureinfo"
+    ],
+    "145": [
+      "new_folder_src_psms_wpf_converters_booltovisibilityconverter_cs_type"
+    ],
+    "146": [
+      "new_folder_src_psms_wpf_converters_currencyconverter_cs_cultureinfo"
+    ],
+    "147": [
+      "new_folder_src_psms_wpf_converters_currencyconverter_cs_type"
+    ],
+    "148": [
+      "new_folder_src_psms_wpf_converters_statustocolorconverter_cs_cultureinfo"
+    ],
+    "149": [
+      "new_folder_src_psms_wpf_converters_statustocolorconverter_cs_type"
+    ],
+    "150": [
+      "new_folder_src_psms_wpf_services_navigationservice_cs_string"
+    ],
+    "151": [
+      "new_folder_src_psms_wpf_viewmodels_baseviewmodel_cs_bool"
+    ],
+    "152": [
+      "new_folder_src_psms_wpf_viewmodels_baseviewmodel_cs_func"
+    ],
+    "153": [
+      "new_folder_src_psms_wpf_viewmodels_baseviewmodel_cs_string"
+    ],
+    "154": [
+      "new_folder_src_psms_wpf_viewmodels_baseviewmodel_cs_task"
+    ],
+    "155": [
+      "new_folder_src_psms_wpf_viewmodels_customerformviewmodel_cs_bool"
+    ],
+    "156": [
+      "new_folder_src_psms_wpf_viewmodels_customerformviewmodel_cs_int"
+    ],
+    "157": [
+      "new_folder_src_psms_wpf_viewmodels_customerformviewmodel_cs_relaycommand"
+    ],
+    "158": [
+      "new_folder_src_psms_wpf_viewmodels_customerformviewmodel_cs_string"
+    ],
+    "159": [
+      "new_folder_src_psms_wpf_viewmodels_customerformviewmodel_cs_task"
+    ],
+    "160": [
+      "new_folder_src_psms_wpf_viewmodels_customerlistviewmodel_cs_observablecollection"
+    ],
+    "161": [
+      "new_folder_src_psms_wpf_viewmodels_customerlistviewmodel_cs_relaycommand"
+    ],
+    "162": [
+      "new_folder_src_psms_wpf_viewmodels_customerlistviewmodel_cs_string"
+    ],
+    "163": [
+      "new_folder_src_psms_wpf_viewmodels_customerlistviewmodel_cs_task"
+    ],
+    "164": [
+      "new_folder_src_psms_wpf_viewmodels_dashboardviewmodel_cs_decimal"
+    ],
+    "165": [
+      "new_folder_src_psms_wpf_viewmodels_dashboardviewmodel_cs_int"
+    ],
+    "166": [
+      "new_folder_src_psms_wpf_viewmodels_dashboardviewmodel_cs_relaycommand"
+    ],
+    "167": [
+      "new_folder_src_psms_wpf_viewmodels_dashboardviewmodel_cs_task"
+    ],
+    "168": [
+      "new_folder_src_psms_wpf_viewmodels_installmentviewmodel_cs_observablecollection"
+    ],
+    "169": [
+      "new_folder_src_psms_wpf_viewmodels_installmentviewmodel_cs_relaycommand"
+    ],
+    "170": [
+      "new_folder_src_psms_wpf_viewmodels_installmentviewmodel_cs_string"
+    ],
+    "171": [
+      "new_folder_src_psms_wpf_viewmodels_installmentviewmodel_cs_task"
+    ],
+    "172": [
+      "new_folder_src_psms_wpf_viewmodels_loginviewmodel_cs_bool"
+    ],
+    "173": [
+      "new_folder_src_psms_wpf_viewmodels_loginviewmodel_cs_int"
+    ],
+    "174": [
+      "new_folder_src_psms_wpf_viewmodels_loginviewmodel_cs_relaycommand"
+    ],
+    "175": [
+      "new_folder_src_psms_wpf_viewmodels_loginviewmodel_cs_string"
+    ],
+    "176": [
+      "new_folder_src_psms_wpf_viewmodels_loginviewmodel_cs_task"
+    ],
+    "177": [
+      "new_folder_src_psms_wpf_viewmodels_mainviewmodel_cs_bool"
+    ],
+    "178": [
+      "new_folder_src_psms_wpf_viewmodels_mainviewmodel_cs_func"
+    ],
+    "179": [
+      "new_folder_src_psms_wpf_viewmodels_mainviewmodel_cs_relaycommand"
+    ],
+    "180": [
+      "new_folder_src_psms_wpf_viewmodels_mainviewmodel_cs_string"
+    ],
+    "181": [
+      "new_folder_src_psms_wpf_viewmodels_mainviewmodel_cs_task"
+    ],
+    "182": [
+      "new_folder_src_psms_wpf_viewmodels_paymentviewmodel_cs_decimal"
+    ],
+    "183": [
+      "new_folder_src_psms_wpf_viewmodels_paymentviewmodel_cs_observablecollection"
+    ],
+    "184": [
+      "new_folder_src_psms_wpf_viewmodels_paymentviewmodel_cs_relaycommand"
+    ],
+    "185": [
+      "new_folder_src_psms_wpf_viewmodels_paymentviewmodel_cs_string"
+    ],
+    "186": [
+      "new_folder_src_psms_wpf_viewmodels_paymentviewmodel_cs_task"
+    ],
+    "187": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_bool"
+    ],
+    "188": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_decimal"
+    ],
+    "189": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_int"
+    ],
+    "190": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_relaycommand"
+    ],
+    "191": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_string"
+    ],
+    "192": [
+      "new_folder_src_psms_wpf_viewmodels_productformviewmodel_cs_task"
+    ],
+    "193": [
+      "new_folder_src_psms_wpf_viewmodels_productlistviewmodel_cs_observablecollection"
+    ],
+    "194": [
+      "new_folder_src_psms_wpf_viewmodels_productlistviewmodel_cs_relaycommand"
+    ],
+    "195": [
+      "new_folder_src_psms_wpf_viewmodels_productlistviewmodel_cs_string"
+    ],
+    "196": [
+      "new_folder_src_psms_wpf_viewmodels_productlistviewmodel_cs_task"
+    ],
+    "197": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_bool"
+    ],
+    "198": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_int"
+    ],
+    "199": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_observablecollection"
+    ],
+    "200": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_relaycommand"
+    ],
+    "201": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_string"
+    ],
+    "202": [
+      "new_folder_src_psms_wpf_viewmodels_reportviewmodel_cs_task"
+    ],
+    "203": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_decimal"
+    ],
+    "204": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_int"
+    ],
+    "205": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_observablecollection"
+    ],
+    "206": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_paymentmethod"
+    ],
+    "207": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_relaycommand"
+    ],
+    "208": [
+      "new_folder_src_psms_wpf_viewmodels_saleviewmodel_cs_task"
+    ],
+    "209": [
+      "new_folder_src_psms_wpf_viewmodels_settingsviewmodel_cs_datetime"
+    ],
+    "210": [
+      "new_folder_src_psms_wpf_viewmodels_settingsviewmodel_cs_int"
+    ],
+    "211": [
+      "new_folder_src_psms_wpf_viewmodels_settingsviewmodel_cs_relaycommand"
+    ],
+    "212": [
+      "new_folder_src_psms_wpf_viewmodels_settingsviewmodel_cs_string"
+    ],
+    "213": [
+      "new_folder_src_psms_wpf_viewmodels_settingsviewmodel_cs_task"
+    ],
+    "214": [
+      "new_folder_tests_psms_application_tests_resulttests_cs_fact"
+    ],
+    "215": [
+      "new_folder_tests_psms_domain_tests_entitytests_cs_fact"
+    ],
+    "216": [
+      "new_folder_tests_psms_infrastructure_tests_repositorytests_cs_fact"
+    ],
+    "217": [
+      "new_folder_tests_psms_infrastructure_tests_repositorytests_cs_task"
+    ],
+    "218": [
+      "object"
+    ],
+    "219": [
+      "observableobject"
+    ],
+    "220": [
+      "profile"
+    ],
+    "221": [
+      "regression_loanamount_regression_project_src_init"
+    ],
+    "222": [
+      "serviceprovider"
+    ],
+    "223": [
+      "startupeventargs"
+    ],
+    "224": [
+      "usercontrol"
+    ],
+    "225": [
+      "window"
+    ]
+  },
+  "cohesion": {
+    "0": 0.3137254901960784,
+    "1": 0.21212121212121213,
+    "2": 0.23636363636363636,
+    "3": 0.2,
+    "4": 0.5,
+    "5": 0.4,
+    "6": 0.6666666666666666,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0,
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0,
+    "185": 1.0,
+    "186": 1.0,
+    "187": 1.0,
+    "188": 1.0,
+    "189": 1.0,
+    "190": 1.0,
+    "191": 1.0,
+    "192": 1.0,
+    "193": 1.0,
+    "194": 1.0,
+    "195": 1.0,
+    "196": 1.0,
+    "197": 1.0,
+    "198": 1.0,
+    "199": 1.0,
+    "200": 1.0,
+    "201": 1.0,
+    "202": 1.0,
+    "203": 1.0,
+    "204": 1.0,
+    "205": 1.0,
+    "206": 1.0,
+    "207": 1.0,
+    "208": 1.0,
+    "209": 1.0,
+    "210": 1.0,
+    "211": 1.0,
+    "212": 1.0,
+    "213": 1.0,
+    "214": 1.0,
+    "215": 1.0,
+    "216": 1.0,
+    "217": 1.0,
+    "218": 1.0,
+    "219": 1.0,
+    "220": 1.0,
+    "221": 1.0,
+    "222": 1.0,
+    "223": 1.0,
+    "224": 1.0,
+    "225": 1.0
+  },
+  "gods": [
+    {
+      "id": "nti_ml_app_utils_model_loader_load_artifact",
+      "label": "load_artifact()",
+      "degree": 8
+    },
+    {
+      "id": "nti_ml_app_utils_ui_components_apply_custom_css",
+      "label": "apply_custom_css()",
+      "degree": 7
+    },
+    {
+      "id": "nti_ml_app_utils_ui_components_render_sidebar",
+      "label": "render_sidebar()",
+      "degree": 7
+    },
+    {
+      "id": "nti_ml_app_utils_ui_components_render_header",
+      "label": "render_header()",
+      "degree": 7
+    },
+    {
+      "id": "nti_ml_app_utils_ui_components_render_about_section",
+      "label": "render_about_section()",
+      "degree": 7
+    },
+    {
+      "id": "nti_ml_app_utils_model_loader_get_model_path",
+      "label": "get_model_path()",
+      "degree": 6
+    },
+    {
+      "id": "nti_ml_app_utils_model_loader_plot_feature_importance",
+      "label": "plot_feature_importance()",
+      "degree": 5
+    },
+    {
+      "id": "04_randomforest_hrattrition_app_streamlit_app_load_csv",
+      "label": "load_csv()",
+      "degree": 4
+    },
+    {
+      "id": "02_decisiontree_churnmodelling_app_streamlit_app_load_artifacts",
+      "label": "load_artifacts()",
+      "degree": 3
+    },
+    {
+      "id": "03_xgboost_loanapproval_classification_app_streamlit_app_load_pipeline",
+      "label": "load_pipeline()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "load_csv()",
+      "target": "Path",
+      "source_files": [
+        "04_RandomForest_HRAttrition/app/streamlit_app.py",
+        ""
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "note": "Bridges community 1 → community 3"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `load_csv()` connect `04_RandomForest_HRAttrition/app/streamlit_app.py` to `Path`?",
+      "why": "High betweenness centrality (0.003) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `load_artifact()` connect `load_artifact` to `1_Loan_Approval.py`?",
+      "why": "High betweenness centrality (0.001) - this node is a cross-community bridge."
+    }
+  ]
+}
