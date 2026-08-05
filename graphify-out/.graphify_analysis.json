@@ -1,131 +1,131 @@
 {
   "communities": {
     "0": [
-      "nti_ml_app_app",
-      "nti_ml_app_pages_1_loan_approval",
-      "nti_ml_app_pages_2_loan_default",
-      "nti_ml_app_pages_3_hr_attrition",
-      "nti_ml_app_pages_4_churn_modelling",
-      "nti_ml_app_utils_model_loader",
-      "nti_ml_app_utils_model_loader_get_model_path",
-      "nti_ml_app_utils_model_loader_plot_feature_importance",
-      "nti_ml_app_utils_model_loader_rationale_33",
-      "nti_ml_app_utils_ui_components",
-      "nti_ml_app_utils_ui_components_apply_custom_css",
-      "nti_ml_app_utils_ui_components_rationale_122",
-      "nti_ml_app_utils_ui_components_rationale_140",
-      "nti_ml_app_utils_ui_components_rationale_147",
-      "nti_ml_app_utils_ui_components_rationale_4",
-      "nti_ml_app_utils_ui_components_render_about_section",
-      "nti_ml_app_utils_ui_components_render_header",
-      "nti_ml_app_utils_ui_components_render_sidebar"
+      "apps_nti_ml_app_app",
+      "apps_nti_ml_app_pages_1_model_inference",
+      "apps_nti_ml_app_pages_1_model_inference_get_feature_importances",
+      "apps_nti_ml_app_pages_2_model_metrics",
+      "apps_nti_ml_app_pages_2_model_metrics_highlight_max",
+      "apps_nti_ml_app_utils_ui_components",
+      "apps_nti_ml_app_utils_ui_components_apply_custom_css",
+      "apps_nti_ml_app_utils_ui_components_rationale_122",
+      "apps_nti_ml_app_utils_ui_components_rationale_140",
+      "apps_nti_ml_app_utils_ui_components_rationale_147",
+      "apps_nti_ml_app_utils_ui_components_rationale_4",
+      "apps_nti_ml_app_utils_ui_components_render_about_section",
+      "apps_nti_ml_app_utils_ui_components_render_header",
+      "apps_nti_ml_app_utils_ui_components_render_sidebar"
     ],
     "1": [
-      "04_randomforest_hrattrition_app_streamlit_app",
-      "04_randomforest_hrattrition_app_streamlit_app_employee_dataframe",
-      "04_randomforest_hrattrition_app_streamlit_app_header",
-      "04_randomforest_hrattrition_app_streamlit_app_load_csv",
-      "04_randomforest_hrattrition_app_streamlit_app_load_metadata",
-      "04_randomforest_hrattrition_app_streamlit_app_load_pipeline",
-      "04_randomforest_hrattrition_app_streamlit_app_model_name",
-      "04_randomforest_hrattrition_app_streamlit_app_model_parameters",
-      "04_randomforest_hrattrition_app_streamlit_app_probability_chart",
-      "04_randomforest_hrattrition_app_streamlit_app_py_cache_resource",
-      "04_randomforest_hrattrition_app_streamlit_app_py_dataframe",
-      "cache_data"
+      "cache_data",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_employee_dataframe",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_header",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_load_csv",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_load_metadata",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_load_pipeline",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_model_name",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_model_parameters",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_probability_chart",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_py_cache_resource",
+      "projects_employee_attrition_random_forest_hr_app_streamlit_app_py_dataframe"
     ],
     "2": [
-      "regression_loanamount_regression_project_src_preprocessing",
-      "regression_loanamount_regression_project_src_preprocessing_align_features",
-      "regression_loanamount_regression_project_src_preprocessing_build_feature_matrix",
-      "regression_loanamount_regression_project_src_preprocessing_cap_outliers_iqr",
-      "regression_loanamount_regression_project_src_preprocessing_clean_raw_dataframe",
-      "regression_loanamount_regression_project_src_preprocessing_py_dataframe",
-      "regression_loanamount_regression_project_src_preprocessing_rationale_1",
-      "regression_loanamount_regression_project_src_preprocessing_rationale_14",
-      "regression_loanamount_regression_project_src_preprocessing_rationale_37",
-      "regression_loanamount_regression_project_src_preprocessing_rationale_55",
-      "regression_loanamount_regression_project_src_preprocessing_rationale_72"
+      "projects_loan_approval_regression_src_preprocessing",
+      "projects_loan_approval_regression_src_preprocessing_align_features",
+      "projects_loan_approval_regression_src_preprocessing_build_feature_matrix",
+      "projects_loan_approval_regression_src_preprocessing_cap_outliers_iqr",
+      "projects_loan_approval_regression_src_preprocessing_clean_raw_dataframe",
+      "projects_loan_approval_regression_src_preprocessing_py_dataframe",
+      "projects_loan_approval_regression_src_preprocessing_rationale_1",
+      "projects_loan_approval_regression_src_preprocessing_rationale_14",
+      "projects_loan_approval_regression_src_preprocessing_rationale_37",
+      "projects_loan_approval_regression_src_preprocessing_rationale_55",
+      "projects_loan_approval_regression_src_preprocessing_rationale_72"
     ],
     "3": [
-      "02_decisiontree_churnmodelling_app_streamlit_app",
-      "02_decisiontree_churnmodelling_app_streamlit_app_load_artifacts",
-      "02_decisiontree_churnmodelling_app_streamlit_app_py_cache_resource",
-      "03_xgboost_loanapproval_classification_app_streamlit_app",
-      "03_xgboost_loanapproval_classification_app_streamlit_app_load_pipeline",
-      "03_xgboost_loanapproval_classification_app_streamlit_app_py_cache_resource",
-      "06_svm_loan_approval_classification_app_streamlit_app",
-      "06_svm_loan_approval_classification_app_streamlit_app_load_pipeline",
-      "06_svm_loan_approval_classification_app_streamlit_app_py_cache_resource",
-      "path"
+      "path",
+      "projects_customer_churn_app_streamlit_app",
+      "projects_customer_churn_app_streamlit_app_load_artifacts",
+      "projects_customer_churn_app_streamlit_app_py_cache_resource",
+      "projects_loan_approval_svm_classification_app_streamlit_app",
+      "projects_loan_approval_svm_classification_app_streamlit_app_load_pipeline",
+      "projects_loan_approval_svm_classification_app_streamlit_app_py_cache_resource",
+      "projects_loan_approval_xgboost_classification_app_streamlit_app",
+      "projects_loan_approval_xgboost_classification_app_streamlit_app_load_pipeline",
+      "projects_loan_approval_xgboost_classification_app_streamlit_app_py_cache_resource"
     ],
     "4": [
-      "04_randomforest_hrattrition_src_preprocessing",
-      "04_randomforest_hrattrition_src_preprocessing_build_preprocessor",
-      "04_randomforest_hrattrition_src_preprocessing_clean_hr_data",
-      "04_randomforest_hrattrition_src_preprocessing_py_dataframe",
-      "columntransformer"
+      "apps_nti_ml_app_utils_model_loader",
+      "apps_nti_ml_app_utils_model_loader_get_model_path",
+      "apps_nti_ml_app_utils_model_loader_get_project_root",
+      "apps_nti_ml_app_utils_model_loader_load_artifact",
+      "apps_nti_ml_app_utils_model_loader_plot_feature_importance",
+      "apps_nti_ml_app_utils_model_loader_py_cache_resource",
+      "apps_nti_ml_app_utils_model_loader_rationale_14",
+      "apps_nti_ml_app_utils_model_loader_rationale_33",
+      "apps_nti_ml_app_utils_model_loader_rationale_8"
     ],
     "5": [
-      "nti_ml_app_utils_model_loader_get_project_root",
-      "nti_ml_app_utils_model_loader_load_artifact",
-      "nti_ml_app_utils_model_loader_py_cache_resource",
-      "nti_ml_app_utils_model_loader_rationale_14",
-      "nti_ml_app_utils_model_loader_rationale_8"
+      "columntransformer",
+      "projects_employee_attrition_random_forest_hr_src_preprocessing",
+      "projects_employee_attrition_random_forest_hr_src_preprocessing_build_preprocessor",
+      "projects_employee_attrition_random_forest_hr_src_preprocessing_clean_hr_data",
+      "projects_employee_attrition_random_forest_hr_src_preprocessing_py_dataframe"
     ],
     "6": [
-      "01_logisticregression_loandefault_app_streamlit_app",
-      "01_logisticregression_loandefault_app_streamlit_app_load_artifacts",
-      "01_logisticregression_loandefault_app_streamlit_app_py_cache_resource"
+      "projects_loan_approval_knn_nb_app_streamlit_app",
+      "projects_loan_approval_knn_nb_app_streamlit_app_load_artifacts",
+      "projects_loan_approval_knn_nb_app_streamlit_app_py_cache_resource"
     ],
     "7": [
-      "05_knn_nb_loan_approval_app_streamlit_app",
-      "05_knn_nb_loan_approval_app_streamlit_app_load_artifacts",
-      "05_knn_nb_loan_approval_app_streamlit_app_py_cache_resource"
+      "projects_loan_approval_regression_app_streamlit_app",
+      "projects_loan_approval_regression_app_streamlit_app_load_artifacts",
+      "projects_loan_approval_regression_app_streamlit_app_py_cache_resource"
     ],
     "8": [
-      "regression_loanamount_regression_project_app_streamlit_app",
-      "regression_loanamount_regression_project_app_streamlit_app_load_artifacts",
-      "regression_loanamount_regression_project_app_streamlit_app_py_cache_resource"
+      "projects_loan_default_app_streamlit_app",
+      "projects_loan_default_app_streamlit_app_load_artifacts",
+      "projects_loan_default_app_streamlit_app_py_cache_resource"
     ],
     "9": [
-      "01_logisticregression_loandefault_src_init"
+      "01_logisticregression_loandefault_app_streamlit_app_py_cache_resource"
     ],
     "10": [
-      "01_logisticregression_loandefault_src_preprocessing"
+      "02_decisiontree_churnmodelling_app_streamlit_app_py_cache_resource"
     ],
     "11": [
-      "02_decisiontree_churnmodelling_src_init"
+      "03_xgboost_loanapproval_classification_app_streamlit_app_py_cache_resource"
     ],
     "12": [
-      "02_decisiontree_churnmodelling_src_preprocessing"
+      "04_randomforest_hrattrition_app_streamlit_app_py_cache_resource"
     ],
     "13": [
-      "03_xgboost_loanapproval_src_init"
+      "04_randomforest_hrattrition_app_streamlit_app_py_dataframe"
     ],
     "14": [
-      "03_xgboost_loanapproval_src_preprocessing"
+      "04_randomforest_hrattrition_src_preprocessing_py_dataframe"
     ],
     "15": [
-      "04_randomforest_hrattrition_src_init"
+      "05_knn_nb_loan_approval_app_streamlit_app_py_cache_resource"
     ],
     "16": [
-      "abstractvalidator"
+      "06_svm_loan_approval_classification_app_streamlit_app_py_cache_resource"
     ],
     "17": [
-      "cancellationtoken"
+      "abstractvalidator"
     ],
     "18": [
-      "dbcontext"
+      "cancellationtoken"
     ],
     "19": [
-      "dictionary"
+      "dbcontext"
     ],
     "20": [
-      "exiteventargs"
+      "dictionary"
     ],
     "21": [
-      "fitness_fitness"
+      "exiteventargs"
     ],
     "22": [
       "icontainer"
@@ -716,37 +716,70 @@
       "new_folder_tests_psms_infrastructure_tests_repositorytests_cs_task"
     ],
     "218": [
-      "object"
+      "nti_ml_app_utils_model_loader_py_cache_resource"
     ],
     "219": [
-      "observableobject"
+      "object"
     ],
     "220": [
-      "profile"
+      "observableobject"
     ],
     "221": [
-      "regression_loanamount_regression_project_src_init"
+      "profile"
     ],
     "222": [
-      "serviceprovider"
+      "projects_customer_churn_src_init"
     ],
     "223": [
-      "startupeventargs"
+      "projects_customer_churn_src_preprocessing"
     ],
     "224": [
-      "usercontrol"
+      "projects_employee_attrition_random_forest_hr_src_init"
     ],
     "225": [
+      "projects_fitness_fitness"
+    ],
+    "226": [
+      "projects_loan_approval_regression_src_init"
+    ],
+    "227": [
+      "projects_loan_approval_xgboost_src_init"
+    ],
+    "228": [
+      "projects_loan_approval_xgboost_src_preprocessing"
+    ],
+    "229": [
+      "projects_loan_default_src_init"
+    ],
+    "230": [
+      "projects_loan_default_src_preprocessing"
+    ],
+    "231": [
+      "regression_loanamount_regression_project_app_streamlit_app_py_cache_resource"
+    ],
+    "232": [
+      "regression_loanamount_regression_project_src_preprocessing_py_dataframe"
+    ],
+    "233": [
+      "serviceprovider"
+    ],
+    "234": [
+      "startupeventargs"
+    ],
+    "235": [
+      "usercontrol"
+    ],
+    "236": [
       "window"
     ]
   },
   "cohesion": {
-    "0": 0.3137254901960784,
+    "0": 0.21978021978021978,
     "1": 0.21212121212121213,
     "2": 0.23636363636363636,
     "3": 0.2,
-    "4": 0.5,
-    "5": 0.4,
+    "4": 0.25,
+    "5": 0.5,
     "6": 0.6666666666666666,
     "7": 0.6666666666666666,
     "8": 0.6666666666666666,
@@ -966,57 +999,68 @@
     "222": 1.0,
     "223": 1.0,
     "224": 1.0,
-    "225": 1.0
+    "225": 1.0,
+    "226": 1.0,
+    "227": 1.0,
+    "228": 1.0,
+    "229": 1.0,
+    "230": 1.0,
+    "231": 1.0,
+    "232": 1.0,
+    "233": 1.0,
+    "234": 1.0,
+    "235": 1.0,
+    "236": 1.0
   },
   "gods": [
     {
-      "id": "nti_ml_app_utils_model_loader_load_artifact",
-      "label": "load_artifact()",
-      "degree": 8
-    },
-    {
-      "id": "nti_ml_app_utils_ui_components_apply_custom_css",
+      "id": "apps_nti_ml_app_utils_ui_components_apply_custom_css",
       "label": "apply_custom_css()",
-      "degree": 7
-    },
-    {
-      "id": "nti_ml_app_utils_ui_components_render_sidebar",
-      "label": "render_sidebar()",
-      "degree": 7
-    },
-    {
-      "id": "nti_ml_app_utils_ui_components_render_header",
-      "label": "render_header()",
-      "degree": 7
-    },
-    {
-      "id": "nti_ml_app_utils_ui_components_render_about_section",
-      "label": "render_about_section()",
-      "degree": 7
-    },
-    {
-      "id": "nti_ml_app_utils_model_loader_get_model_path",
-      "label": "get_model_path()",
-      "degree": 6
-    },
-    {
-      "id": "nti_ml_app_utils_model_loader_plot_feature_importance",
-      "label": "plot_feature_importance()",
       "degree": 5
     },
     {
-      "id": "04_randomforest_hrattrition_app_streamlit_app_load_csv",
+      "id": "apps_nti_ml_app_utils_ui_components_render_sidebar",
+      "label": "render_sidebar()",
+      "degree": 5
+    },
+    {
+      "id": "apps_nti_ml_app_utils_ui_components_render_header",
+      "label": "render_header()",
+      "degree": 5
+    },
+    {
+      "id": "apps_nti_ml_app_utils_model_loader_load_artifact",
+      "label": "load_artifact()",
+      "degree": 4
+    },
+    {
+      "id": "projects_employee_attrition_random_forest_hr_app_streamlit_app_load_csv",
       "label": "load_csv()",
       "degree": 4
     },
     {
-      "id": "02_decisiontree_churnmodelling_app_streamlit_app_load_artifacts",
+      "id": "apps_nti_ml_app_utils_model_loader_get_project_root",
+      "label": "get_project_root()",
+      "degree": 3
+    },
+    {
+      "id": "apps_nti_ml_app_utils_ui_components_render_about_section",
+      "label": "render_about_section()",
+      "degree": 3
+    },
+    {
+      "id": "projects_customer_churn_app_streamlit_app_load_artifacts",
       "label": "load_artifacts()",
       "degree": 3
     },
     {
-      "id": "03_xgboost_loanapproval_classification_app_streamlit_app_load_pipeline",
-      "label": "load_pipeline()",
+      "id": "projects_employee_attrition_random_forest_hr_src_preprocessing_build_preprocessor",
+      "label": "build_preprocessor()",
+      "degree": 3
+    },
+    {
+      "id": "projects_loan_approval_regression_src_preprocessing_clean_raw_dataframe",
+      "label": "clean_raw_dataframe()",
       "degree": 3
     }
   ],
@@ -1025,24 +1069,24 @@
       "source": "load_csv()",
       "target": "Path",
       "source_files": [
-        "04_RandomForest_HRAttrition/app/streamlit_app.py",
+        "projects/employee_attrition/random_forest_hr/app/streamlit_app.py",
         ""
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "note": "Bridges community 1 → community 3"
+      "note": "Bridges community 3 → community 1"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `load_csv()` connect `04_RandomForest_HRAttrition/app/streamlit_app.py` to `Path`?",
+      "question": "Why does `load_csv()` connect `random_forest_hr/app/streamlit_app.py` to `Path`?",
       "why": "High betweenness centrality (0.003) - this node is a cross-community bridge."
     },
     {
-      "type": "bridge_node",
-      "question": "Why does `load_artifact()` connect `load_artifact` to `1_Loan_Approval.py`?",
-      "why": "High betweenness centrality (0.001) - this node is a cross-community bridge."
+      "type": "verify_inferred",
+      "question": "Are the 3 inferred relationships involving `Path` (e.g. with `load_artifacts()` and `load_pipeline()`) actually correct?",
+      "why": "`Path` has 3 INFERRED edges - model-reasoned connections that need verification."
     }
   ]
 }

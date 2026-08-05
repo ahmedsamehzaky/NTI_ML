@@ -6,9 +6,46 @@ import sys
 import joblib
 from pathlib import Path
 from PIL import Image
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.ui_components import apply_custom_css, render_sidebar, render_header
+
+def get_feature_importances(pipeline, df_columns):
+    try:
+        classifier = pipeline.named_steps.get('classifier') or pipeline.named_steps.get('regressor')
+        importances = None
+        if hasattr(classifier, 'feature_importances_'):
+            importances = classifier.feature_importances_
+        elif hasattr(classifier, 'coef_'):
+            coefs = np.abs(classifier.coef_)
+            if len(coefs.shape) > 1:
+                importances = coefs.mean(axis=0)
+            else:
+                importances = coefs
+                
+        if importances is not None:
+            preprocessor = pipeline.named_steps['preprocessor']
+            num_features = preprocessor.transformers_[0][2]
+            cat_features_orig = preprocessor.transformers_[1][2]
+            cat_encoder = preprocessor.named_transformers_['cat'].named_steps['onehot']
+            cat_features = cat_encoder.get_feature_names_out(cat_features_orig)
+            feat_names = np.concatenate([num_features, cat_features])
+            
+            col_importances = {c: 0.0 for c in df_columns}
+            for fn, imp in zip(feat_names, importances):
+                if fn in col_importances:
+                    col_importances[fn] += float(imp)
+                else:
+                    for orig_col in cat_features_orig:
+                        if fn.startswith(orig_col + '_'):
+                            col_importances[orig_col] += float(imp)
+                            break
+            return col_importances
+    except Exception as e:
+        pass
+    return None
 
 st.set_page_config(page_title="Model Inference", page_icon="🔮", layout="wide")
 apply_custom_css()
@@ -93,26 +130,6 @@ with col2:
 
 st.markdown("</div>", unsafe_allow_html=True)
 
-# --- Visualizations ---
-st.markdown("### Model Training Reports")
-rep_col1, rep_col2 = st.columns(2)
-with rep_col1:
-    feat_img = reports_dir / 'feature_importance.png'
-    if feat_img.exists():
-        st.image(Image.open(feat_img), caption="Feature Importance (Tree-based)", use_column_width=True)
-    else:
-        st.info("Feature importance not available.")
-
-with rep_col2:
-    comp_img = reports_dir / 'model_comparison.png'
-    if comp_img.exists():
-        st.image(Image.open(comp_img), caption="Algorithm Comparison", use_column_width=True)
-    else:
-        st.info("Model comparison not available.")
-
-st.markdown("---")
-st.markdown("### Interactive Inference")
-
 if model_choice and data_path.exists():
     # Load dataset sample to get schema
     df_sample = pd.read_csv(data_path, nrows=100)
@@ -122,38 +139,56 @@ if model_choice and data_path.exists():
     df_sample = df_sample.drop(columns=[c for c in drop_list if c in df_sample.columns])
     if config['target'] in df_sample.columns:
         df_sample = df_sample.drop(columns=[config['target']])
+
+    # Pre-load the chosen model to get its feature importances dynamically
+    model_type, file_name = model_choice.split(": ")
+    if model_type == "Base":
+        model_path = base_models_dir / file_name
+    else:
+        model_path = tuned_models_dir / file_name
         
-    # Attempt to sort columns by feature importance using Random Forest Base
-    sorted_cols = df_sample.columns.tolist()
+    pipeline = None
     try:
-        rf_path = base_models_dir / 'Random_Forest_base.pkl'
-        if rf_path.exists():
-            rf_pipe = joblib.load(rf_path)
-            if hasattr(rf_pipe.named_steps.get('classifier'), 'feature_importances_'):
-                importances = rf_pipe.named_steps['classifier'].feature_importances_
-                
-                # Extract original feature names and match them
-                preprocessor = rf_pipe.named_steps['preprocessor']
-                num_features = preprocessor.transformers_[0][2]
-                cat_features_orig = preprocessor.transformers_[1][2]
-                cat_encoder = preprocessor.named_transformers_['cat'].named_steps['onehot']
-                cat_features = cat_encoder.get_feature_names_out(cat_features_orig)
-                
-                feat_names = np.concatenate([num_features, cat_features])
-                
-                col_importances = {c: 0.0 for c in df_sample.columns}
-                for fn, imp in zip(feat_names, importances):
-                    if fn in col_importances:
-                        col_importances[fn] += imp
-                    else:
-                        for orig_col in cat_features_orig:
-                            if fn.startswith(orig_col + '_'):
-                                col_importances[orig_col] += imp
-                                break
-                                
-                sorted_cols = sorted(df_sample.columns, key=lambda x: col_importances.get(x, 0), reverse=True)
+        pipeline = joblib.load(model_path)
     except Exception as e:
-        pass # fallback to original order if anything fails
+        pass
+        
+    col_importances = None
+    if pipeline is not None:
+        col_importances = get_feature_importances(pipeline, df_sample.columns)
+        
+    # --- Visualizations ---
+    st.markdown("### Model Training Reports")
+    rep_col1, rep_col2 = st.columns(2)
+    
+    with rep_col1:
+        if col_importances is not None:
+            fi_df = pd.DataFrame({
+                'Feature': list(col_importances.keys()), 
+                'Importance': list(col_importances.values())
+            }).sort_values(by='Importance', ascending=False).head(20) # Top 20
+            
+            fig, ax = plt.subplots(figsize=(10, 6))
+            sns.barplot(x='Importance', y='Feature', data=fi_df, ax=ax, color='#1f77b4')
+            ax.set_title(f'Top Feature Importances ({file_name})', fontsize=14)
+            st.pyplot(fig)
+        else:
+            st.info(f"Feature importance not natively available for {file_name} (e.g., KNN/Naive Bayes).")
+
+    with rep_col2:
+        comp_img = reports_dir / 'model_comparison.png'
+        if comp_img.exists():
+            st.image(Image.open(comp_img), caption="Algorithm Comparison", use_column_width=True)
+        else:
+            st.info("Model comparison not available.")
+
+    st.markdown("---")
+    st.markdown("### Interactive Inference")
+    
+    # Sort columns by feature importance if available
+    sorted_cols = df_sample.columns.tolist()
+    if col_importances is not None:
+        sorted_cols = sorted(df_sample.columns, key=lambda x: col_importances.get(x, 0), reverse=True)
         
     st.markdown("Fill out the generated form below to get a prediction. **Features are sorted by importance.**")
     
@@ -179,15 +214,9 @@ if model_choice and data_path.exists():
         submit = st.form_submit_button("Predict")
         
     if submit:
-        # Load the model
-        model_type, file_name = model_choice.split(": ")
-        if model_type == "Base":
-            model_path = base_models_dir / file_name
-        else:
-            model_path = tuned_models_dir / file_name
-            
         try:
-            pipeline = joblib.load(model_path)
+            if pipeline is None:
+                pipeline = joblib.load(model_path)
             
             # Predict
             input_df = pd.DataFrame([input_data])

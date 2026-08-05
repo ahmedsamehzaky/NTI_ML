@@ -1,28 +1,36 @@
-# Graph Report - C:\Users\soham\Desktop\ahmed\NTI-ML  (2026-08-04)
+# Graph Report - C:\Users\soham\Desktop\ahmed\NTI-ML  (2026-08-05)
 
 ## Corpus Check
 - cluster-only mode — file stats not available
 
 ## Summary
-- 287 nodes · 106 edges · 226 communities (15 shown, 211 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
+- 298 nodes · 77 edges · 237 communities (15 shown, 222 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0990284f`
+- Built from commit: `15aaf855`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- 1_Loan_Approval.py
-- 04_RandomForest_HRAttrition/app/streamlit_app.py
-- LoanAmount_Regression_Project/src/preprocessing.py
+- apply_custom_css
+- random_forest_hr/app/streamlit_app.py
+- regression/src/preprocessing.py
 - Path
+- nti_ml_app/utils/model_loader.py
 - build_preprocessor
-- load_artifact
 - load_artifacts
 - load_artifacts
 - load_artifacts
+- cache_resource
+- cache_resource
+- cache_resource
+- cache_resource
+- DataFrame
+- DataFrame
+- cache_resource
+- cache_resource
 - AbstractValidator
 - CancellationToken
 - DbContext
@@ -224,66 +232,69 @@
 - Fact
 - Fact
 - Task
+- cache_resource
 - object
 - ObservableObject
 - Profile
+- cache_resource
+- DataFrame
 - ServiceProvider
 - StartupEventArgs
 - UserControl
 - Window
 
 ## God Nodes (most connected - your core abstractions)
-1. `load_artifact()` - 8 edges
-2. `apply_custom_css()` - 7 edges
-3. `render_sidebar()` - 7 edges
-4. `render_header()` - 7 edges
-5. `render_about_section()` - 7 edges
-6. `get_model_path()` - 6 edges
-7. `plot_feature_importance()` - 5 edges
-8. `load_csv()` - 4 edges
-9. `load_artifacts()` - 3 edges
-10. `load_pipeline()` - 3 edges
+1. `apply_custom_css()` - 5 edges
+2. `render_sidebar()` - 5 edges
+3. `render_header()` - 5 edges
+4. `load_artifact()` - 4 edges
+5. `load_csv()` - 4 edges
+6. `get_project_root()` - 3 edges
+7. `render_about_section()` - 3 edges
+8. `load_artifacts()` - 3 edges
+9. `build_preprocessor()` - 3 edges
+10. `clean_raw_dataframe()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `load_csv()` --references--> `Path`  [EXTRACTED]
-  04_RandomForest_HRAttrition/app/streamlit_app.py →   _Bridges community 1 → community 3_
+  projects/employee_attrition/random_forest_hr/app/streamlit_app.py →   _Bridges community 3 → community 1_
 
 ## Import Cycles
 - None detected.
 
-## Communities (226 total, 211 thin omitted)
+## Communities (237 total, 222 thin omitted)
 
-### Community 0 - "1_Loan_Approval.py"
-Cohesion: 0.31
-Nodes (11): get_model_path(), plot_feature_importance(), A helper mapping model names to their relative paths., apply_custom_css(), Renders the standard navigation sidebar and footer., Renders a modern hero section., Renders the About section at the bottom of pages., Injects custom CSS for a modern, professional AI dashboard aesthetic. (+3 more)
+### Community 0 - "apply_custom_css"
+Cohesion: 0.22
+Nodes (8): apply_custom_css(), Renders the standard navigation sidebar and footer., Renders a modern hero section., Renders the About section at the bottom of pages., Injects custom CSS for a modern, professional AI dashboard aesthetic., render_about_section(), render_header(), render_sidebar()
 
-### Community 1 - "04_RandomForest_HRAttrition/app/streamlit_app.py"
+### Community 1 - "random_forest_hr/app/streamlit_app.py"
 Cohesion: 0.21
-Nodes (8): employee_dataframe(), load_csv(), load_metadata(), load_pipeline(), probability_chart(), cache_resource, DataFrame, cache_data
+Nodes (8): cache_data, employee_dataframe(), load_csv(), load_metadata(), load_pipeline(), probability_chart(), cache_resource, DataFrame
 
-### Community 2 - "LoanAmount_Regression_Project/src/preprocessing.py"
+### Community 2 - "regression/src/preprocessing.py"
 Cohesion: 0.24
 Nodes (10): align_features(), build_feature_matrix(), cap_outliers_iqr(), clean_raw_dataframe(), DataFrame, Reusable preprocessing utilities for the loan amount regression project. These…, Apply structural cleaning to the raw loan approval dataset. Strips whitespace…, Apply Interquartile Range based winsorization to the specified numerical… (+2 more)
 
 ### Community 3 - "Path"
 Cohesion: 0.20
-Nodes (7): load_artifacts(), cache_resource, load_pipeline(), cache_resource, load_pipeline(), cache_resource, Path
+Nodes (7): Path, load_artifacts(), cache_resource, load_pipeline(), cache_resource, load_pipeline(), cache_resource
 
-### Community 4 - "build_preprocessor"
+### Community 4 - "nti_ml_app/utils/model_loader.py"
+Cohesion: 0.25
+Nodes (7): get_model_path(), get_project_root(), load_artifact(), cache_resource, Loads a .pkl or .joblib file given a path relative to the repository root., A helper mapping model names to their relative paths., Returns the path to the NTI-ML repository root.
+
+### Community 5 - "build_preprocessor"
 Cohesion: 0.50
-Nodes (4): build_preprocessor(), clean_hr_data(), DataFrame, ColumnTransformer
-
-### Community 5 - "load_artifact"
-Cohesion: 0.40
-Nodes (5): get_project_root(), load_artifact(), cache_resource, Loads a .pkl or .joblib file given a path relative to the repository root., Returns the path to the NTI-ML repository root.
+Nodes (4): ColumnTransformer, build_preprocessor(), clean_hr_data(), DataFrame
 
 ## Knowledge Gaps
-- **211 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **222 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `load_csv()` connect `04_RandomForest_HRAttrition/app/streamlit_app.py` to `Path`?**
+- **Why does `load_csv()` connect `random_forest_hr/app/streamlit_app.py` to `Path`?**
   _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `load_artifact()` connect `load_artifact` to `1_Loan_Approval.py`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **Are the 3 inferred relationships involving `Path` (e.g. with `load_artifacts()` and `load_pipeline()`) actually correct?**
+  _`Path` has 3 INFERRED edges - model-reasoned connections that need verification._

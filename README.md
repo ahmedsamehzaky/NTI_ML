@@ -2,241 +2,148 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-orange)
-![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-blue)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green)
-![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Visualization-purple)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-yellow)
-![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-F37626)
+![Scikit--learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-yellow)
+![Streamlit](https://img.shields.io/badge/Streamlit-Applications-red)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626)
 
----
+This repository contains data-analysis, machine-learning, and Streamlit application projects developed during the National Telecommunication Institute (NTI) Applied AI & Machine Learning program.
 
-# Overview
+The work covers exploratory data analysis, data cleaning, feature engineering, preprocessing, model comparison, evaluation, saved model artifacts, and interactive inference dashboards.
 
-This repository contains a collection of **Data Analysis**, **Machine Learning**, and **Applied AI** projects completed during the **Applied Artificial Intelligence & Machine Learning** training program at the **National Telecommunication Institute (NTI)**.
+The repository graph currently contains 298 nodes, 77 edges, and 237 detected communities. The main navigation hubs are the shared model loader, preprocessing utilities, artifact-loading helpers, and Streamlit applications.
 
-The repository demonstrates the application of professional data analysis workflows, exploratory data analysis (EDA), feature engineering, data preprocessing, and machine learning concepts using Python and its data science ecosystem.
-
-Each project is organized independently with its own datasets, notebooks, documentation, and requirements where applicable.
-
----
-
-# Repository Structure
+## Repository map
 
 ```text
 NTI-ML/
-│
-├── Employee/
-│   ├── Data/
-│   │   ├── employee_attrition_*.csv
-│   │   └── employee_attrition_*.xlsx
-│   │
-│   ├── Notebooks/
-│   │   └── Employee_Attrition.ipynb
-│   │
-│   ├── README.md
+├── apps/
+│   ├── nti_ml_app/                 Multi-model Streamlit dashboard
+│   ├── pipelines/                  Training and metrics automation
 │   └── requirements.txt
-│
-├── Fitness/
-│   ├── Fitness.ipynb
-│   └── Fitness.py
-│
-├── Scouting-Players/
-│   └── Mini_Project_1.ipynb
-│
-├── Titanic-project/
-│   ├── data/
-│   │   ├── titanic.csv
-│   │   └── titanic_final.csv
-│   │
-│   ├── Notebooks/
-│   │   ├── Titanic.ipynb
-│   │   ├── EDA_Project.ipynb
-│   │   ├── Preprocessing_and_Feature_Engineering.ipynb
-│   │   └── Titanic_Visualization.ipynb
-│   │
-│   ├── README.md
-│   └── requirements.txt
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
+├── projects/
+│   ├── customer_churn/              Decision Tree churn classification
+│   ├── employee_attrition/          Attrition analysis and Random Forest app
+│   ├── fitness/                     Fitness data analysis
+│   ├── loan_approval/
+│   │   ├── knn_nb/                  KNN and Naive Bayes classification/regression
+│   │   ├── regression/              Loan amount regression model
+│   │   ├── svm/                     SVM loan approval classification
+│   │   └── xgboost/                 XGBoost loan approval classification
+│   ├── loan_approval_regression/    Additional regression reports
+│   ├── loan_default/                Logistic Regression risk classification
+│   ├── scouting_players/            NumPy football-player analysis
+│   └── titanic/                     Titanic EDA and survival analysis
+├── requirements.txt                 Shared Python dependencies
+└── README.md
 ```
 
----
+## Projects
 
-# Projects
+| Area | Main work | Typical outputs |
+|---|---|---|
+| Titanic | Cleaning, EDA, visualization, feature preparation, and survival analysis | Notebooks and prepared CSV datasets |
+| Employee attrition | Business analysis plus Random Forest classification | Reports, metrics, feature importance, and Streamlit inference |
+| Customer churn | Decision Tree classification with pruning and interpretation | Saved model, scaler, feature schema, reports, and Streamlit app |
+| Loan default | Logistic Regression financial-risk classification | Preprocessing code, reports, model artifacts, and Streamlit app |
+| Loan approval | KNN, Naive Bayes, SVM, XGBoost, and regression variants | Notebooks, saved models, comparison reports, and dashboards |
+| Fitness | Python and notebook-based fitness data analysis | `Fitness.py` and `Fitness.ipynb` |
+| Scouting players | NumPy filtering, ranking, and matrix operations | `Mini_Project_1.ipynb` |
 
-## 1. Employee Attrition Analysis
+Most project folders contain their own `README.md`, `requirements.txt`, notebooks, data, reusable preprocessing code, reports, models, and/or Streamlit app.
 
-A complete data analysis project focused on understanding employee attrition and identifying the factors that influence employee turnover.
+## Shared dashboard and pipelines
 
-### Topics Covered
+The main dashboard in `apps/nti_ml_app` provides:
 
-- Business Understanding
-- Data Cleaning
-- Data Quality Assessment
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Business Insights
-- Data Visualization
+- Model inference across saved models from the portfolio.
+- Model metrics and comparison views.
+- Feature-importance displays when supported by the model.
 
----
-
-## 2. Titanic Survival Analysis
-
-A portfolio-quality data analysis project built using the famous Titanic dataset following a real-world analytics workflow.
-
-### Project Workflow
-
-- Business Understanding
-- Data Understanding
-- Data Quality Assessment
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Final Dataset Preparation
-- Executive Summary
-
-### Skills Applied
-
-- Missing Value Handling
-- Duplicate Detection
-- Outlier Assessment
-- Business-Driven EDA
-- Statistical Analysis
-- Data Visualization
-
----
-
-## 3. Sports Academy Scouting
-
-A NumPy-based mini project designed to evaluate and rank football players using numerical analysis.
-
-### Skills Applied
-
-- NumPy Arrays
-- Matrix Operations
-- Boolean Indexing
-- Conditional Filtering
-- Ranking Logic
-
----
-
-## 4. Fitness Tracking & Analysis
-
-A Python project for organizing and analyzing fitness-related data.
-
-### Topics Covered
-
-- Workout Tracking
-- Data Organization
-- Performance Analysis
-- Basic Data Visualization
-
----
-
-# Technologies & Tools
-
-### Programming Language
-
-- Python
-
-### Libraries
-
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-
-### Development Tools
-
-- Jupyter Notebook
-- Visual Studio Code
-- Git
-- GitHub
-
----
-
-# Repository Highlights
-
-- Professional Data Analysis Workflow
-- Portfolio-Quality Projects
-- Business-Oriented EDA
-- Data Cleaning & Preprocessing
-- Feature Engineering
-- Statistical Analysis
-- Data Visualization
-- Machine Learning Fundamentals
-
----
-
-# Getting Started
-
-Clone the repository
+The automation scripts in `apps/pipelines` train models and generate extended metrics:
 
 ```bash
-git clone https://github.com/ahmedsamehzaky/NTI-ML.git
+python apps/pipelines/run_all_pipelines.py
+python apps/pipelines/generate_extended_metrics.py
 ```
 
-Move to the project directory
+The graph report for the repository is available at `graphify-out/GRAPH_REPORT.md`.
 
-```bash
-cd NTI-ML
-```
+## Installation
 
-Create a virtual environment
+Create and activate a virtual environment, then install the shared dependencies:
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment
-
-**Windows**
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Linux / macOS**
+Linux/macOS:
 
 ```bash
 source venv/bin/activate
 ```
 
-Install dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
-Launch Jupyter Notebook
+Some projects have additional dependencies in their local `requirements.txt` files. Install those when working inside a specific project.
+
+## Running applications
+
+Run the portfolio dashboard from the repository root:
+
+```bash
+streamlit run apps/nti_ml_app/app.py
+```
+
+Individual project dashboards can be launched from their project directory, for example:
+
+```bash
+cd projects/customer_churn
+pip install -r requirements.txt
+streamlit run app/streamlit_app.py
+```
+
+Other project applications are available at:
+
+- `projects/loan_approval/knn_nb/app/streamlit_app.py`
+- `projects/loan_approval/regression/app/streamlit_app.py`
+- `projects/loan_approval/svm/classification_app/streamlit_app.py`
+- `projects/loan_approval/xgboost/classification_app/streamlit_app.py`
+- `projects/loan_default/app/streamlit_app.py`
+- `projects/employee_attrition/random_forest_hr/app/streamlit_app.py`
+
+These entry points were confirmed in the current repository. Applications that depend on saved artifacts may require the corresponding project notebook or training pipeline to be run first.
+
+The top-level working directories are `apps/`, `projects/`, `graphify-out/`, `.agents/`, and `venv/`. The latter two are local tooling/environment directories and are not part of the application code.
+
+## Working with notebooks
+
+Start Jupyter from the repository root:
 
 ```bash
 jupyter notebook
 ```
 
----
+Notebook-based work is organized under each project’s `notebooks/` or `Notebooks/` directory. Generated comparison tables, metrics, figures, and serialized models are stored alongside the relevant project.
 
-# Learning Objectives
+## Main technologies
 
-This repository demonstrates practical experience in:
+- Python, Jupyter, and Streamlit
+- Pandas and NumPy
+- Scikit-learn and SciPy
+- Matplotlib, Seaborn, and Plotly
+- XGBoost where required by the relevant project
+- Joblib for model and preprocessing artifacts
 
-- Data Cleaning
-- Exploratory Data Analysis
-- Data Visualization
-- Business Problem Solving
-- Feature Engineering
-- Python Programming
-- Statistical Analysis
-- Machine Learning Preparation
----
-
-# Author
+## Author
 
 **Ahmed Sameh Mohamed Zaky**
 
-Computer Science Student
-
----
+Computer Science student and applied machine-learning practitioner.
