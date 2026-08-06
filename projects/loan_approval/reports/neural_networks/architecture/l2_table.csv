@@ -1,0 +1,4 @@
+layer,type,output_shape,params,activation,dropout,regularizer
+dense_15,Dense,"(None, 64)",896,relu,,<keras.src.regularizers.regularizers.L2 object at 0x000002CF30F78EC0>
+dense_16,Dense,"(None, 32)",2080,relu,,<keras.src.regularizers.regularizers.L2 object at 0x000002CF32B25E80>
+dense_17,Dense,"(None, 1)",33,sigmoid,,None

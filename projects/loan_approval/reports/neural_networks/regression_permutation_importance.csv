@@ -1,0 +1,13 @@
+feature,mae_increase
+income_annum,319.0
+luxury_assets_value,313.0
+bank_asset_value,280.0
+commercial_assets_value,231.0
+residential_assets_value,218.0
+no_of_dependents,4.0
+cibil_score,2.0
+loan_term,0.0
+education_Not Graduate,-8.0
+self_employed_Yes,-18.0
+self_employed_No,-25.0
+education_Graduate,-34.0

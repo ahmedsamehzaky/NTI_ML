@@ -1,0 +1,6 @@
+layer,type,params
+hidden_layer_1,Dense,896
+batch_normalization_1,BatchNormalization,256
+hidden_layer_2,Dense,2080
+batch_normalization_2,BatchNormalization,128
+output_layer,Dense,33

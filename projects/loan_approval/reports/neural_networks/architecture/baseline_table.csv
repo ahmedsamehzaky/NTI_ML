@@ -1,0 +1,3 @@
+layer,type,params
+hidden_layer_1,Dense,224
+output_layer,Dense,17

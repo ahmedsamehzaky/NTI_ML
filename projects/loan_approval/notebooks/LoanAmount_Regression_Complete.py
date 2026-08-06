@@ -1,0 +1,79 @@
+import json, random, warnings
+from pathlib import Path
+import joblib, numpy as np, pandas as pd, matplotlib.pyplot as plt
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers, regularizers
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+tf.random.set_seed(SEED)
+print("TensorFlow version:", tf.__version__)
+print("GPUs:", tf.config.list_physical_devices("GPU"))
+warnings.filterwarnings("ignore")
+ROOT = Path.cwd().resolve().parent if Path.cwd().name.lower() == "notebooks" else Path.cwd().resolve(); DATA=ROOT/"data/raw/loan_approval_dataset.csv"
+MODELS, REPORTS=ROOT/"models/tuned",ROOT/"reports/neural_networks"; ARCH,FIGS=REPORTS/"architecture",REPORTS/"figures"
+for p in (MODELS,ARCH,FIGS): p.mkdir(parents=True,exist_ok=True)
+df=pd.read_csv(DATA); df.columns=df.columns.str.strip()
+for c in df.select_dtypes("object"): df[c]=df[c].str.strip()
+print({"shape":df.shape,"missing":int(df.isna().sum().sum()),"duplicates":int(df.duplicated().sum()),"target":df.loan_amount.describe()[["min","mean","max"]].to_dict()})
+y=pd.to_numeric(df.pop("loan_amount"),errors="coerce"); X=df.drop(columns=["loan_id","loan_status"],errors="ignore"); valid=y.notna(); X,y=X.loc[valid],y.loc[valid]
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=.2,random_state=SEED); X_train,X_val,y_train,y_val=train_test_split(X_train,y_train,test_size=.2,random_state=SEED)
+num=X_train.select_dtypes(include=np.number).columns.tolist(); cat=[c for c in X_train if c not in num]
+preprocessor=ColumnTransformer([("num",Pipeline([("imputer",SimpleImputer(strategy="median")),("scaler",StandardScaler())]),num),("cat",Pipeline([("imputer",SimpleImputer(strategy="most_frequent")),("onehot",OneHotEncoder(handle_unknown="ignore",sparse_output=False))]),cat)],verbose_feature_names_out=False)
+Xtr,Xv,Xte=preprocessor.fit_transform(X_train),preprocessor.transform(X_val),preprocessor.transform(X_test); feature_names=preprocessor.get_feature_names_out().tolist(); print("Tensor input shape:",Xtr.shape)
+
+from sklearn.preprocessing import StandardScaler
+target_scaler = StandardScaler()
+y_train_sc = target_scaler.fit_transform(y_train.values.reshape(-1,1)).ravel()
+y_val_sc = target_scaler.transform(y_val.values.reshape(-1,1)).ravel()
+y_test_sc = target_scaler.transform(y_test.values.reshape(-1,1)).ravel()
+
+def build(name):
+    spec={"baseline":([16],0,0,"mse"),"shallow":([32],0,0,"mse"),"deep":([64,32],0,0,"mse"),"dropout":([64,32],.25,0,"mae"),"batchnorm":([64,32],0,0,"mse"),"l2":([64,32],0,1e-4,"huber"),"final":([64,32],.2,1e-4,"huber")}[name]
+    units,drop,l2,loss=spec; m=keras.Sequential([layers.Input(shape=(Xtr.shape[1],))],name=name)
+    for u in units:
+        m.add(layers.Dense(u,activation="relu",kernel_regularizer=regularizers.l2(l2) if l2 else None))
+        if name in ("batchnorm","final"): m.add(layers.BatchNormalization())
+        if drop: m.add(layers.Dropout(drop))
+    m.add(layers.Dense(1,activation="linear")); m.compile(optimizer=keras.optimizers.Adam(1e-3),loss=keras.losses.Huber() if loss=="huber" else loss,metrics=["mae","mse"]); return m
+def architecture(m):
+    rows=[{"layer":l.name,"type":l.__class__.__name__,"output_shape":str(l.output.shape),"params":l.count_params(),"activation":getattr(getattr(l,"activation",None),"__name__",""),"dropout":getattr(l,"rate",""),"regularizer":str(getattr(l,"kernel_regularizer",""))} for l in m.layers]; t=pd.DataFrame(rows); t.to_csv(ARCH/f"regression_{m.name}_table.csv",index=False); fig,ax=plt.subplots(figsize=(10,max(2,len(rows)*.45))); ax.axis("off"); ax.table(cellText=t.values,colLabels=t.columns,loc="center"); fig.tight_layout(); fig.savefig(ARCH/f"regression_{m.name}_table.png",dpi=160); plt.close(fig)
+    try: tf.keras.utils.plot_model(m,to_file=str(ARCH/f"regression_{m.name}.png"),show_shapes=True)
+    except Exception: pass
+def callbacks(path): return [EarlyStopping(monitor="val_loss",patience=15,restore_best_weights=True),ReduceLROnPlateau(monitor="val_loss",factor=.5,patience=5,min_lr=1e-6),ModelCheckpoint(filepath=path,monitor="val_loss",save_best_only=True)]
+smoke=build("shallow"); smoke.fit(Xtr[:256],y_train_sc[:256],validation_data=(Xv[:128],y_val_sc[:128]),epochs=2,batch_size=32,verbose=0); print("Smoke test passed")
+models={}; histories={}; rows=[]
+for name in ["baseline","shallow","deep","dropout","batchnorm","l2","final"]:
+    m=build(name); m.summary(); architecture(m); h=m.fit(Xtr,y_train_sc,validation_data=(Xv,y_val_sc),epochs=60,batch_size=64,verbose=0,callbacks=callbacks(str(MODELS/f"regression_{name}_checkpoint.keras"))); models[name]=m; histories[name]=h.history
+    pv=m.predict(Xv,verbose=0).ravel(); pv_inv=target_scaler.inverse_transform(pv.reshape(-1,1)).ravel(); rows.append({"model":name,"params":m.count_params(),"optimizer":m.optimizer.__class__.__name__,"val_mae":mean_absolute_error(y_val,pv_inv),"val_rmse":mean_squared_error(y_val,pv_inv)**.5,"val_r2":r2_score(y_val,pv_inv)})
+    fig,ax=plt.subplots(1,2,figsize=(10,3)); ax[0].plot(h.history["loss"],label="train"); ax[0].plot(h.history["val_loss"],label="validation"); ax[0].set_title("Loss"); ax[1].plot(h.history["mae"],label="train"); ax[1].plot(h.history["val_mae"],label="validation"); ax[1].set_title("MAE"); [a.legend() for a in ax]; fig.tight_layout(); fig.savefig(FIGS/f"regression_{name}_history.png",dpi=160); plt.close(fig)
+comparison=pd.DataFrame(rows).sort_values("val_mae"); comparison.to_csv(REPORTS/"regression_nn_comparison.csv",index=False); print(comparison.to_string(index=False)); best_name=comparison.iloc[0].model; model=models[best_name]
+pred=model.predict(Xte,verbose=0).ravel(); pred=target_scaler.inverse_transform(pred.reshape(-1,1)).ravel(); err=y_test-pred; metrics={"best_model":best_name,"mae":mean_absolute_error(y_test,pred),"mse":mean_squared_error(y_test,pred),"rmse":mean_squared_error(y_test,pred)**.5,"r2":r2_score(y_test,pred),"mape":float(np.mean(np.abs(err/y_test))*100) if (y_test!=0).all() else None}; print(metrics)
+
+
+fig,ax=plt.subplots(2,2,figsize=(10,8)); ax[0,0].scatter(y_test,pred,s=10); lim=[min(y_test.min(),pred.min()),max(y_test.max(),pred.max())]; ax[0,0].plot(lim,lim,"r--"); ax[0,0].set_title("Actual vs predicted"); ax[0,1].hist(err,bins=30); ax[0,1].set_title("Residual distribution"); ax[1,0].scatter(pred,err,s=10); ax[1,0].axhline(0,color="r"); ax[1,0].set_title("Residuals vs predicted"); ax[1,1].hist(np.abs(err),bins=30); ax[1,1].set_title("Absolute error"); fig.tight_layout(); fig.savefig(FIGS/"regression_error_analysis.png",dpi=160); plt.close(fig)
+bins=pd.qcut(y_test,4,duplicates="drop"); pd.DataFrame({"target_bin":bins.astype(str),"abs_error":np.abs(err)}).groupby("target_bin",observed=True).mean().to_csv(REPORTS/"regression_error_by_target_range.csv")
+rng=np.random.default_rng(SEED); base=metrics["mae"]; imp=[]
+for j,n in enumerate(feature_names):
+ z=Xte.copy(); z[:,j]=rng.permutation(z[:,j]); perm_pred=target_scaler.inverse_transform(model.predict(z,verbose=0).reshape(-1,1)).ravel(); imp.append((n,mean_absolute_error(y_test,perm_pred)-base))
+importance=pd.DataFrame(imp,columns=["feature","mae_increase"]).sort_values("mae_increase",ascending=False); importance.to_csv(REPORTS/"regression_permutation_importance.csv",index=False); fig,ax=plt.subplots(figsize=(7,5)); ax.barh(importance.feature.head(15)[::-1],importance.mae_increase.head(15)[::-1]); ax.set_title("Permutation importance (MAE increase)"); fig.tight_layout(); fig.savefig(FIGS/"regression_permutation_importance.png",dpi=160); plt.close(fig)
+sample=Xte[:128]; activation_model=tf.keras.Model(inputs=model.input,outputs=[l.output for l in model.layers if hasattr(l,"activation")]); acts=activation_model.predict(sample,verbose=0); weights=[l.get_weights()[0].ravel() for l in model.layers if l.get_weights()]; fig,ax=plt.subplots(1,2,figsize=(10,3)); [ax[0].hist(w,bins=30,alpha=.35,label=str(i)) for i,w in enumerate(weights)]; ax[0].legend(); ax[0].set_title("Weight distributions"); ax[1].bar(range(len(weights)),[np.mean(np.abs(w)) for w in weights]); ax[1].set_title("Mean |weight|"); fig.tight_layout(); fig.savefig(FIGS/"regression_weights.png",dpi=160); plt.close(fig)
+fig,ax=plt.subplots(); [ax.hist(np.ravel(a),bins=30,alpha=.35,label=str(i)) for i,a in enumerate(acts[:-1])]; ax.legend(); ax.set_title("Sampled activations"); fig.savefig(FIGS/"regression_activations.png",dpi=160); plt.close(fig)
+with tf.GradientTape() as tape:
+ xb=tf.convert_to_tensor(Xtr[:64],dtype=tf.float32); tape.watch(xb); loss=tf.reduce_mean(tf.keras.losses.mse(tf.convert_to_tensor(y_train_sc[:64],dtype=tf.float32)[:,None],model(xb,training=True)))
+grads=tape.gradient(loss,model.trainable_variables); metrics.update({"gradient_norm":float(tf.linalg.global_norm([g for g in grads if g is not None])),"early_stopping_epoch":len(histories[best_name]["loss"]),"dead_neuron_rate":float(np.mean(np.concatenate([np.ravel(a)<=0 for a in acts[:-1]])))})
+try:
+ import shap; e=shap.KernelExplainer(lambda a:model.predict(a,verbose=0),Xtr[:25]); shap.summary_plot(e.shap_values(Xte[:25]),Xte[:25],feature_names=feature_names,show=False); plt.savefig(FIGS/"regression_shap.png",dpi=160,bbox_inches="tight"); plt.close()
+except Exception as e: metrics["shap_status"]=f"skipped: {type(e).__name__}"
+model.save(MODELS/"neural_network_regression.keras"); joblib.dump(preprocessor,MODELS/"regression_preprocessor.joblib"); joblib.dump(target_scaler,MODELS/"regression_target_scaler.joblib"); (MODELS/"regression_feature_names.json").write_text(json.dumps(feature_names)); (MODELS/"regression_training_history.json").write_text(json.dumps(histories[best_name])); (MODELS/"regression_nn_metadata.json").write_text(json.dumps({"metrics":metrics,"seed":SEED,"tensorflow":tf.__version__,"input_schema":{c:str(X[c].dtype) for c in X.columns},"model_config":model.get_config(),"artifacts":{"model":"neural_network_regression.keras","preprocessor":"regression_preprocessor.joblib","target_scaler":"regression_target_scaler.joblib"}},default=str,indent=2)); json.dump(metrics,open(REPORTS/"regression_nn_metrics.json","w"),default=float,indent=2)
+reloaded=tf.keras.models.load_model(MODELS/"neural_network_regression.keras"); reloaded_pre=joblib.load(MODELS/"regression_preprocessor.joblib"); reloaded_scaler=joblib.load(MODELS/"regression_target_scaler.joblib"); print("Reloaded prediction:",float(reloaded_scaler.inverse_transform(reloaded.predict(reloaded_pre.transform(X_test.iloc[:1]),verbose=0)).ravel()[0]))
+
+

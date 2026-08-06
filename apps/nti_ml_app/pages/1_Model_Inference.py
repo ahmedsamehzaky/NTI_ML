@@ -58,14 +58,14 @@ ROOT_DIR = Path(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 PROJECT_CONFIGS = {
     "Loan Approval (Classification)": {
         "dir": "projects/loan_approval",
-        "data": "projects/loan_approval/xgboost/data/raw/loan_approval_dataset.csv",
+        "data": "projects/loan_approval/data/raw/loan_approval_dataset.csv",
         "target": " loan_status",
         "drop_cols": ["loan_id"],
         "task": "Classification"
     },
     "Loan Amount (Regression)": {
         "dir": "projects/loan_approval_regression",
-        "data": "projects/loan_approval/xgboost/data/raw/loan_approval_dataset.csv",
+        "data": "projects/loan_approval/data/raw/loan_approval_dataset.csv",
         "target": " loan_amount",
         "drop_cols": ["loan_id", " loan_status"],
         "task": "Regression"

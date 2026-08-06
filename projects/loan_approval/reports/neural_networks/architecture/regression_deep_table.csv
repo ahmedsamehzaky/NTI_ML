@@ -1,0 +1,4 @@
+layer,type,output_shape,params,activation,dropout,regularizer
+dense_6,Dense,"(None, 64)",832,relu,,None
+dense_7,Dense,"(None, 32)",2080,relu,,None
+dense_8,Dense,"(None, 1)",33,linear,,None

@@ -1,0 +1,8 @@
+layer,type,output_shape,params,activation,dropout,regularizer
+dense_18,Dense,"(None, 64)",896,relu,,<keras.src.regularizers.regularizers.L2 object at 0x000002CF38C44EC0>
+batch_normalization_2,BatchNormalization,"(None, 64)",256,,,
+dropout_2,Dropout,"(None, 64)",0,,0.25,
+dense_19,Dense,"(None, 32)",2080,relu,,<keras.src.regularizers.regularizers.L2 object at 0x000002CF38C5F710>
+batch_normalization_3,BatchNormalization,"(None, 32)",128,,,
+dropout_3,Dropout,"(None, 32)",0,,0.25,
+dense_20,Dense,"(None, 1)",33,sigmoid,,None

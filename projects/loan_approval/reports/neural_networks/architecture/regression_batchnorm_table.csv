@@ -1,0 +1,6 @@
+layer,type,output_shape,params,activation,dropout,regularizer
+dense_12,Dense,"(None, 64)",832,relu,,None
+batch_normalization,BatchNormalization,"(None, 64)",256,,,
+dense_13,Dense,"(None, 32)",2080,relu,,None
+batch_normalization_1,BatchNormalization,"(None, 32)",128,,,
+dense_14,Dense,"(None, 1)",33,linear,,None
