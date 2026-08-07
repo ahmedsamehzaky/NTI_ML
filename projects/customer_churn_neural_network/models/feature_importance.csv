@@ -1,0 +1,14 @@
+feature,auc_drop
+numeric__NumOfProducts,0.13191302558474527
+numeric__Age,0.11879827148638478
+numeric__IsActiveMember,0.03848823650456157
+numeric__Balance,0.021159201591330112
+categorical__Gender_Male,0.01910967830441035
+categorical__Geography_France,0.012217573221757538
+categorical__Geography_Germany,0.012036490842993519
+categorical__Gender_Female,0.007918238562315771
+categorical__Geography_Spain,0.006735715755538996
+numeric__HasCrCard,0.0004856300157761728
+numeric__CreditScore,-0.0015090198230329754
+numeric__EstimatedSalary,-0.0016489471157142832
+numeric__Tenure,-0.002935729473900639

@@ -220,32 +220,87 @@ if model_choice and data_path.exists():
             
             # Predict
             input_df = pd.DataFrame([input_data])
-            prediction = pipeline.predict(input_df)[0]
+            raw_prediction = pipeline.predict(input_df)[0]
             
-            probability_text = ""
+            proba = None
             if config['task'] == 'Classification' and hasattr(pipeline, "predict_proba"):
                 try:
                     proba = pipeline.predict_proba(input_df)[0]
                 except Exception:
                     proba = None
+
+            st.markdown("### 📊 Prediction Results")
+
+            if config['task'] == 'Regression':
+                pred_val = float(raw_prediction)
+                st.markdown(f"""
+                <div class="result-card-info">
+                    <h3>💰 Predicted Value: ${pred_val:,.2f}</h3>
+                    <p>The regressor model calculated the optimal value based on your input parameters.</p>
+                </div>
+                """, unsafe_allow_html=True)
             else:
-                proba = None
-            
-            # Inverse transform label if classification
-            if config['task'] == 'Classification':
+                # Check for saved label encoder
                 le_path = base_models_dir / 'label_encoder.pkl'
+                prediction = raw_prediction
                 if le_path.exists():
-                    le = joblib.load(le_path)
-                    prediction = le.inverse_transform([prediction])[0]
-                    
-                    if proba is not None and hasattr(pipeline, "classes_"):
-                        class_probs = []
-                        for cls, p in zip(pipeline.classes_, proba):
-                            cls_name = le.inverse_transform([cls])[0]
-                            class_probs.append(f"**{cls_name}**: {p*100:.1f}%")
-                        probability_text = f"  \n*Probabilities:* " + " | ".join(class_probs)
-                    
-            st.success(f"### Result: {prediction}\n{probability_text}")
+                    try:
+                        le = joblib.load(le_path)
+                        prediction = le.inverse_transform([raw_prediction])[0]
+                    except Exception:
+                        pass
+                
+                # Determine outcome interpretation
+                pred_str = str(prediction).strip().lower()
+                is_pos = pred_str in ['1', '1.0', 'yes', 'approved', 'survived', 'true']
+                
+                project_name = project_choice
+                if "Churn" in project_name:
+                    title_pos, desc_pos = "⚠️ High Churn Risk (Exited)", "The customer is predicted to exit the bank."
+                    title_neg, desc_neg = "🎉 Low Churn Risk (Retained)", "The customer is predicted to stay with the bank."
+                    is_danger = is_pos
+                elif "Default" in project_name:
+                    title_pos, desc_pos = "⚠️ High Default Risk", "The customer is predicted to default on the loan."
+                    title_neg, desc_neg = "✅ Low Default Risk", "The customer is predicted to maintain regular repayments."
+                    is_danger = is_pos
+                elif "Approval" in project_name:
+                    title_pos, desc_pos = "🎉 Loan Approved", "The loan application is predicted to be approved."
+                    title_neg, desc_neg = "⚠️ Loan Rejected", "The loan application is predicted to be rejected."
+                    is_danger = not is_pos
+                elif "Attrition" in project_name:
+                    title_pos, desc_pos = "⚠️ Attrition Risk Detected", "The employee is predicted to leave the organization."
+                    title_neg, desc_neg = "🎉 Employee Retained", "The employee is predicted to stay with the organization."
+                    is_danger = is_pos
+                elif "Titanic" in project_name:
+                    title_pos, desc_pos = "🚢 Passenger Survived", "The model predicts this passenger survived."
+                    title_neg, desc_neg = "⚓ Passenger Did Not Survive", "The model predicts this passenger did not survive."
+                    is_danger = not is_pos
+                else:
+                    title_pos, desc_pos = f"Outcome: {prediction}", "Positive class predicted."
+                    title_neg, desc_neg = f"Outcome: {prediction}", "Negative class predicted."
+                    is_danger = is_pos
+
+                card_title = title_pos if is_pos else title_neg
+                card_desc = desc_pos if is_pos else desc_neg
+                card_style = "result-card-danger" if is_danger else "result-card-success"
+
+                prob_info = ""
+                if proba is not None:
+                    if len(proba) == 2:
+                        prob_0 = proba[0] * 100
+                        prob_1 = proba[1] * 100
+                        prob_info = f"<br><b>Model Confidence:</b> Class 0: <code>{prob_0:.1f}%</code> | Class 1: <code>{prob_1:.1f}%</code>"
+                    elif hasattr(pipeline, "classes_"):
+                        probs_list = [f"<b>{cls}</b>: {p*100:.1f}%" for cls, p in zip(pipeline.classes_, proba)]
+                        prob_info = "<br><b>Probabilities:</b> " + " | ".join(probs_list)
+
+                st.markdown(f"""
+                <div class="{card_style}">
+                    <h3>{card_title}</h3>
+                    <p>{card_desc}</p>
+                    <p>{prob_info}</p>
+                </div>
+                """, unsafe_allow_html=True)
             
         except Exception as e:
             st.error(f"Error making prediction: {e}")
